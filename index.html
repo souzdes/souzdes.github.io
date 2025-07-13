@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Denise Souza</title>
+  <style>
+    :root {
+      --primaria: #c97a88;
+      --secundaria: #f2d7dd;
+      --claro: #fffafa;
+      --texto: #3a2c2c;
+      --cinza: #847a7a;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--claro);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--texto);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: var(--primaria);
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin: 5px 0;
+      color: var(--cinza);
+      text-align: center;
+      font-weight: 400;
+    }
+
+    .links {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .link-item {
+      background-color: var(--secundaria);
+      border: none;
+      padding: 15px;
+      text-align: center;
+      border-radius: 12px;
+      font-size: 1rem;
+      text-decoration: none;
+      color: var(--texto);
+      transition: all 0.3s ease;
+    }
+
+    .link-item:hover {
+      background-color: var(--primaria);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .footer {
+      margin-top: 50px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer a {
+      text-decoration: none;
+      color: var(--texto);
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer a:hover {
+      color: var(--primaria);
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Denise Souza</h1>
+  <h2>Psicóloga | Professora | Pesquisadora</h2>
+  <h2>Mestre e doutoranda em Ciências (Fiocruz)</h2>
+
+  <div class="links">
+    <a class="link-item" href="http://lattes.cnpq.br/4859178862619817" target="_blank">Lattes</a>
+    <a class="link-item" href="https://www.researchgate.net/profile/Denise-Souza-9?ev=hdr_xprf" target="_blank">ResearchGate</a>
+    <a class="link-item" href="https://scholar.google.com/citations?user=nf6DXDwAAAAJ&hl=pt-BR" target="_blank">Google Acadêmico</a>
+    <a class="link-item" href="https://www.linkedin.com/in/denise-souza-24875027b/" target="_blank">LinkedIn</a>
+    <a class="link-item" href="https://souzades.github.io/consultant/" target="_blank">Consultoria</a>
+    <a class="link-item" href="https://www.scielo.br/j/rsp/a/bNCbbnLNcFnqD8XGC7JZ6MH/?lang=en" target="_blank">Publicação: Artigo</a>
+    <a class="link-item" href="https://acervodigital.crp04.org.br/publicacoes/das-diversas-psicologias-das-minas-2/" target="_blank">Publicação: Livro</a>
+    <a class="link-item" href="https://unileste.catolica.edu.br/portal/docente-apresenta-pesquisa-sobre-hiv-em-congresso-internacional-na-africa-do-sul/" target="_blank">Publicação: Congresso</a>
+  </div>
+
+  <div class="footer">
+    <a href="mailto:souza.des@gmail.com" title="Email">
+      ✉️
+    </a>
+    <a href="https://github.com/souzades?tab=repositories" target="_blank" title="GitHub">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+        viewBox="0 0 16 16">
+        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 ... [código cortado para brevidade]"/>
+      </svg>
+    </a>
+  </div>
+</body>
+</html>
