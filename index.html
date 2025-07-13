@@ -24,7 +24,7 @@
     @keyframes fadeIn {
       from {
         opacity: 0;
-        transform: translateY(-10px);
+        transform: translateY(10px);
       }
       to {
         opacity: 1;
@@ -91,6 +91,7 @@
       font-size: 1rem;
       transition: all 0.3s ease;
       cursor: pointer;
+      animation: fadeIn 1s ease-in-out;
     }
 
     .link-button:hover {
@@ -109,6 +110,7 @@
       display: none;
       flex-direction: column;
       gap: 10px;
+      animation: fadeIn 1s ease-in-out;
     }
 
     .tabs {
@@ -141,9 +143,21 @@
     }
 
     .tab-content a {
+      display: block;
+      background-color: var(--fundo-claro);
+      border: 2px solid var(--rosinha);
+      border-radius: 10px;
+      padding: 15px;
       color: var(--texto-escuro);
       text-decoration: none;
       font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .tab-content a:hover {
+      background-color: var(--rosinha);
+      color: white;
+      transform: translateY(-2px);
     }
 
     footer {
@@ -206,7 +220,7 @@
   <div class="container">
     <a class="link-button" href="https://souzdes.github.io/consultant/" target="_blank">Análise de dados</a>
 
-    <div class="link-button" onclick="toggleTabs()">Publicações recentes</div>
+    <div class="link-button" onclick="toggleTabs()">Publicações Recentes</div>
 
     <div id="tabsContainer" class="tabs-container">
       <div class="tabs">
@@ -215,13 +229,13 @@
         <div class="tab" onclick="showTab('congresso')">Congresso</div>
       </div>
       <div id="artigo" class="tab-content active">
-        <a href="https://www.scielo.br/j/rsp/a/bNCbbnLNcFnqD8XGC7JZ6MH/?lang=en" target="_blank">Ler Artigo</a>
+        <a href="https://www.scielo.br/j/rsp/a/bNCbbnLNcFnqD8XGC7JZ6MH/?lang=en" target="_blank">Acesse o artigo publicado na Revista de Saúde Pública</a>
       </div>
       <div id="livro" class="tab-content">
-        <a href="https://acervodigital.crp04.org.br/publicacoes/das-diversas-psicologias-das-minas-2/" target="_blank">Acessar Livro</a>
+        <a href="https://acervodigital.crp04.org.br/publicacoes/das-diversas-psicologias-das-minas-2/" target="_blank">Veja o capítulo no livro "Das diversas psicologias das minas"</a>
       </div>
       <div id="congresso" class="tab-content">
-        <a href="https://unileste.catolica.edu.br/portal/docente-apresenta-pesquisa-sobre-hiv-em-congresso-internacional-na-africa-do-sul/" target="_blank">Ver Congresso</a>
+        <a href="https://unileste.catolica.edu.br/portal/docente-apresenta-pesquisa-sobre-hiv-em-congresso-internacional-na-africa-do-sul/" target="_blank">Leia sobre a participação no Congresso Internacional na África do Sul</a>
       </div>
     </div>
   </div>
