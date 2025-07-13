@@ -21,11 +21,23 @@
       color: var(--texto-escuro);
     }
 
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     header {
       background-color: var(--fundo-escuro);
       color: var(--texto-claro);
       text-align: center;
       padding: 100px 20px 60px;
+      animation: fadeIn 1s ease-in-out;
     }
 
     header h1 {
@@ -38,6 +50,22 @@
     header h2, header h3 {
       margin: 10px 0;
       font-weight: 400;
+    }
+
+    .header-links {
+      margin-top: 10px;
+      font-size: 0.95rem;
+    }
+
+    .header-links a {
+      color: var(--texto-claro);
+      text-decoration: none;
+      margin: 0 8px;
+      transition: color 0.3s ease;
+    }
+
+    .header-links a:hover {
+      color: var(--rosinha);
     }
 
     .container {
@@ -106,6 +134,10 @@
       .link-button {
         font-size: 0.95rem;
       }
+
+      .header-links {
+        font-size: 0.85rem;
+      }
     }
   </style>
 </head>
@@ -113,15 +145,17 @@
 
   <header>
     <h1>Denise Souza</h1>
-    <h2>Psicóloga | Pesquisadora</h2>
-    <h3>Mestre em Ciências</h3>
+    <h2>Psicóloga • Professora • Pesquisadora</h2>
+    <h3>Mestre e doutoranda em Ciências (Fiocruz)</h3>
+    <div class="header-links">
+      <a href="http://lattes.cnpq.br/4859178862619817" target="_blank">Lattes</a> |
+      <a href="https://www.researchgate.net/profile/Denise-Souza-9?ev=hdr_xprf" target="_blank">ResearchGate</a> |
+      <a href="https://scholar.google.com/citations?user=nf6DXDwAAAAJ&hl=pt-BR" target="_blank">Google Acadêmico</a> |
+      <a href="https://www.linkedin.com/in/denise-souza-24875027b/" target="_blank">LinkedIn</a>
+    </div>
   </header>
 
   <div class="container">
-    <a class="link-button" href="http://lattes.cnpq.br/4859178862619817" target="_blank">Lattes</a>
-    <a class="link-button" href="https://www.researchgate.net/profile/Denise-Souza-9?ev=hdr_xprf" target="_blank">ResearchGate</a>
-    <a class="link-button" href="https://scholar.google.com/citations?user=nf6DXDwAAAAJ&hl=pt-BR" target="_blank">Google Acadêmico</a>
-    <a class="link-button" href="https://www.linkedin.com/in/denise-souza-24875027b/" target="_blank">LinkedIn</a>
     <a class="link-button" href="https://souzdes.github.io/consultant/" target="_blank">Consultoria</a>
     <a class="link-button" href="https://www.scielo.br/j/rsp/a/bNCbbnLNcFnqD8XGC7JZ6MH/?lang=en" target="_blank">Artigo</a>
     <a class="link-button" href="https://acervodigital.crp04.org.br/publicacoes/das-diversas-psicologias-das-minas-2/" target="_blank">Livro</a>
