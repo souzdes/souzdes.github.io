@@ -90,12 +90,60 @@
       color: var(--texto-escuro);
       font-size: 1rem;
       transition: all 0.3s ease;
+      cursor: pointer;
     }
 
     .link-button:hover {
       background-color: var(--rosinha);
       color: white;
       transform: translateY(-2px);
+    }
+
+    .tabs-container {
+      max-width: 500px;
+      width: 100%;
+      border: 2px solid var(--rosinha);
+      border-radius: 12px;
+      background: white;
+      padding: 20px;
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 10px;
+    }
+
+    .tab {
+      background: var(--fundo-claro);
+      border: 1px solid var(--rosinha);
+      border-radius: 8px;
+      padding: 8px 14px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .tab.active {
+      background: var(--rosinha);
+      color: white;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+      text-align: center;
+    }
+
+    .tab-content a {
+      color: var(--texto-escuro);
+      text-decoration: none;
+      font-weight: bold;
     }
 
     footer {
@@ -156,10 +204,26 @@
   </header>
 
   <div class="container">
-    <a class="link-button" href="https://souzdes.github.io/consultant/" target="_blank">Consultoria</a>
-    <a class="link-button" href="https://www.scielo.br/j/rsp/a/bNCbbnLNcFnqD8XGC7JZ6MH/?lang=en" target="_blank">Artigo</a>
-    <a class="link-button" href="https://acervodigital.crp04.org.br/publicacoes/das-diversas-psicologias-das-minas-2/" target="_blank">Livro</a>
-    <a class="link-button" href="https://unileste.catolica.edu.br/portal/docente-apresenta-pesquisa-sobre-hiv-em-congresso-internacional-na-africa-do-sul/" target="_blank">Congresso</a>
+    <a class="link-button" href="https://souzdes.github.io/consultant/" target="_blank">Análise de dados</a>
+
+    <div class="link-button" onclick="toggleTabs()">Publicações recentes</div>
+
+    <div id="tabsContainer" class="tabs-container">
+      <div class="tabs">
+        <div class="tab active" onclick="showTab('artigo')">Artigo</div>
+        <div class="tab" onclick="showTab('livro')">Livro</div>
+        <div class="tab" onclick="showTab('congresso')">Congresso</div>
+      </div>
+      <div id="artigo" class="tab-content active">
+        <a href="https://www.scielo.br/j/rsp/a/bNCbbnLNcFnqD8XGC7JZ6MH/?lang=en" target="_blank">Ler Artigo</a>
+      </div>
+      <div id="livro" class="tab-content">
+        <a href="https://acervodigital.crp04.org.br/publicacoes/das-diversas-psicologias-das-minas-2/" target="_blank">Acessar Livro</a>
+      </div>
+      <div id="congresso" class="tab-content">
+        <a href="https://unileste.catolica.edu.br/portal/docente-apresenta-pesquisa-sobre-hiv-em-congresso-internacional-na-africa-do-sul/" target="_blank">Ver Congresso</a>
+      </div>
+    </div>
   </div>
 
   <footer>
@@ -199,6 +263,23 @@
       © 2025 Denise Souza · Todos os direitos reservados.
     </div>
   </footer>
+
+  <script>
+    function toggleTabs() {
+      const container = document.getElementById('tabsContainer');
+      container.style.display = container.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    function showTab(id) {
+      const tabs = document.querySelectorAll('.tab');
+      const contents = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      contents.forEach(content => content.classList.remove('active'));
+
+      document.querySelector(`.tab[onclick="showTab('${id}')"]`).classList.add('active');
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
 
 </body>
 </html>
