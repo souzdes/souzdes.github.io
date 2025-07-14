@@ -62,19 +62,19 @@
 
     .card {
       background-color: white;
-      width: 260px;
-      height: 260px;
+      width: 250px;
+      height: 200px;
       border-radius: 20px;
       padding: 1.5rem;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 0 2px var(--primaria), 0 6px 12px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
       position: relative;
       overflow: hidden;
 
-      /* centralizar conteúdo verticalmente e horizontalmente */
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
     }
 
     .card:hover {
@@ -82,9 +82,9 @@
     }
 
     .card-title {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: bold;
-      color: var(--primaria);
+      color: var(--cinza-escuro);
       margin-bottom: 1.2rem;
       text-align: center;
       width: 100%;
@@ -167,8 +167,6 @@
       color: var(--primaria);
     }
 
-    /* Ícones em SVG simples */
-
     .icon-envelope, .icon-github {
       width: 24px;
       height: 24px;
@@ -212,7 +210,7 @@
 
   <main>
     <div class="card">
-      <div class="card-title">Publicações recentes</div>
+      <div class="card-title">Trabalhos e publicações recentes</div>
       <div class="card-content">
         <a href="https://www.scielo.br/j/rsp/a/bNCbbnLNcFnqD8XGC7JZ6MH/?lang=en" target="_blank" rel="noopener noreferrer">Artigo</a>
         <a href="https://acervodigital.crp04.org.br/publicacoes/das-diversas-psicologias-das-minas-2/" target="_blank" rel="noopener noreferrer">Livro</a>
@@ -221,7 +219,7 @@
     </div>
 
     <div class="card">
-      <div class="card-title">Análise de dados</div>
+      <div class="card-title">Análise de dados em saúde</div>
       <div class="card-content">
         <a href="https://souzdes.github.io/consultant/" target="_blank" rel="noopener noreferrer">🔗 Acesse aqui</a>
       </div>
