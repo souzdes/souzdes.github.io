@@ -53,6 +53,25 @@
       margin-top: 0.3rem;
     }
 
+    /* Links no header */
+    .header-links {
+      margin-top: 2.5rem; /* espaçamento após os textos */
+      font-size: 1.1rem;
+    }
+
+    .header-links a {
+      color: white;
+      text-decoration: none;
+      margin: 0 0.8rem;
+      font-weight: 600;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+
+    .header-links a:hover {
+      border-color: white;
+    }
+
     .intro-section {
       display: flex;
       flex-wrap: wrap;
@@ -65,74 +84,7 @@
       flex-grow: 1;
     }
 
-    .cards {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-   .card {
-  background-color: white;
-  width: 320px;       /* de 260px para 320px */
-  border-radius: 20px;
-  padding: 2rem 1.5rem;  /* de 1.5rem 1.2rem para 2rem 1.5rem */
-  box-shadow: 0 0 0 2px var(--primaria), 0 6px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-   .card-title {
-  font-family: "Inter", Arial, sans-serif;
-  font-size: 1.2rem;
-  color: var(--cinza-escuro);
-  margin-bottom: 1rem;
-  text-align: center;
-  font-weight: 400; /* peso normal, sem negrito */
-}
-
-
-    .card-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease;
-      font-size: 0.9rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-      align-items: center;
-    }
-
-    .card-content.show {
-      max-height: 300px;
-      margin-top: 0.5rem;
-    }
-
-    .card-content a {
-      text-decoration: none;
-      color: #333;
-      transition: all 0.3s ease;
-    }
-
-    .card-content a:hover {
-      text-decoration: underline;
-      color: #c97c8f;
-    }
-
-    .photo {
-      flex-shrink: 0;
-    }
-
-    .photo img {
-      width: 280px;
-      max-width: 100%;
-      border-radius: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
+ 
 
     .blog-section {
       max-width: 800px;
@@ -213,9 +165,6 @@
     @media (max-width: 768px) {
       .intro-section {
         flex-direction: column;
-      }
-
-      .cards {
         align-items: center;
       }
     }
@@ -227,29 +176,15 @@
     <h1>Denise Souza</h1>
     <p>Psicóloga | Pesquisadora</p>
     <p>Mestre em Ciências</p>
+
+    <div class="header-links">
+      <a href="http://lattes.cnpq.br/4859178862619817" target="_blank" rel="noopener noreferrer">CV Lattes</a> |
+      <a href="https://www.researchgate.net/profile/Denise-Souza-9?ev=hdr_xprf" target="_blank" rel="noopener noreferrer">ResearchGate</a> |
+      <a href="https://scholar.google.com/citations?user=abcdefg" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+    </div>
   </header>
 
   <section class="intro-section">
-    <div class="cards">
-      <div class="card" onclick="toggleCard(this)">
-        <div class="card-title">Produção científica</div>
-        <div class="card-content">
-          <a href="http://lattes.cnpq.br/4859178862619817" target="_blank" rel="noopener noreferrer">CV Lattes</a>
-          <a href="https://www.researchgate.net/profile/Denise-Souza-9?ev=hdr_xprf" target="_blank" rel="noopener noreferrer">ResearchGate</a>
-          <a href="https://scholar.google.com/citations?user=abcdefg" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-        </div>
-      </div>
-      <div class="card" onclick="toggleCard(this)">
-        <div class="card-title">Publicações</div>
-        <div class="card-content">
-          <a href="https://www.scielo.br/j/rsp/a/bNCbbnLNcFnqD8XGC7JZ6MH/?lang=en" target="_blank" rel="noopener noreferrer">Artigo</a>
-          <a href="https://acervodigital.crp04.org.br/publicacoes/das-diversas-psicologias-das-minas-2/" target="_blank" rel="noopener noreferrer">Livro</a>
-          <a href="https://unileste.catolica.edu.br/portal/docente-apresenta-pesquisa-sobre-hiv-em-congresso-internacional-na-africa-do-sul/" target="_blank" rel="noopener noreferrer">Congresso</a>
-        </div>
-    
-      </div>
-    </div>
-
     <div class="photo">
       <img src="den.jpg" alt="Foto de Denise Souza">
     </div>
@@ -284,22 +219,6 @@
     </div>
     © 2025 Denise Souza. Todos os direitos reservados.
   </footer>
-
-<script>
-  function toggleCard(clickedCard) {
-    const allCards = document.querySelectorAll('.card');
-
-    allCards.forEach(card => {
-      const content = card.querySelector('.card-content');
-      if (card !== clickedCard) {
-        content.classList.remove('show');
-      }
-    });
-
-    const clickedContent = clickedCard.querySelector('.card-content');
-    clickedContent.classList.toggle('show');
-  }
-</script>
 
 </body>
 </html>
