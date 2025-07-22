@@ -287,12 +287,21 @@
     © 2025 Denise Souza. Todos os direitos reservados.
   </footer>
 
-  <script>
-    function toggleCard(card) {
+<script>
+  function toggleCard(clickedCard) {
+    const allCards = document.querySelectorAll('.card');
+
+    allCards.forEach(card => {
       const content = card.querySelector('.card-content');
-      content.classList.toggle('show');
-    }
-  </script>
+      if (card !== clickedCard) {
+        content.classList.remove('show');
+      }
+    });
+
+    const clickedContent = clickedCard.querySelector('.card-content');
+    clickedContent.classList.toggle('show');
+  }
+</script>
 
 </body>
 </html>
