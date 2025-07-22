@@ -13,6 +13,7 @@
       --texto: #3b2c30;
       --cinza-escuro: #333;
       --rose-escuro: #a0535f;
+      --header-escuro: #8b3f4a;
     }
 
     body {
@@ -24,27 +25,28 @@
     }
 
     header {
-      background: linear-gradient(120deg, var(--primaria), #a55e69);
+      background: linear-gradient(120deg, var(--header-escuro), var(--primaria));
       color: white;
       text-align: center;
       padding: 3rem 1rem 2rem;
     }
 
     header h1 {
-      font-size: 3rem;
+      font-size: 4rem;
       font-family: 'Allura', cursive;
+      margin-bottom: 0.5rem;
     }
 
     header p {
       font-size: 1.2rem;
-      margin-top: 0.5rem;
+      margin-top: 0.3rem;
     }
 
     .intro-section {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       padding: 2rem;
       gap: 2rem;
       max-width: 1100px;
@@ -64,6 +66,7 @@
       padding: 1.5rem 1.2rem;
       box-shadow: 0 0 0 2px var(--primaria), 0 6px 12px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
+      cursor: pointer;
     }
 
     .card:hover {
@@ -73,12 +76,24 @@
     .card-title {
       font-size: 1.2rem;
       color: var(--cinza-escuro);
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
       text-align: center;
+      font-weight: bold;
     }
 
     .card-content {
       text-align: center;
+      display: none;
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+    }
+
+    .card-content.show {
+      display: block;
+      opacity: 1;
+      max-height: 300px;
     }
 
     .card-content a {
@@ -164,7 +179,6 @@
       fill: currentColor;
     }
 
-
     @media (max-width: 768px) {
       .intro-section {
         flex-direction: column;
@@ -186,7 +200,7 @@
 
   <section class="intro-section">
     <div class="cards">
-      <div class="card">
+      <div class="card" onclick="toggleCard(this)">
         <div class="card-title">Produção científica</div>
         <div class="card-content">
           <a href="http://lattes.cnpq.br/4859178862619817" target="_blank">CV Lattes</a>
@@ -194,7 +208,7 @@
           <a href="https://scholar.google.com/citations?user=abcdefg" target="_blank">Google Scholar</a>
         </div>
       </div>
-      <div class="card">
+      <div class="card" onclick="toggleCard(this)">
         <div class="card-title">Publicações</div>
         <div class="card-content">
           <a href="https://www.scielo.br/j/rsp/a/bNCbbnLNcFnqD8XGC7JZ6MH/?lang=en" target="_blank">Artigo - Revista de Saúde Pública USP</a>
@@ -202,7 +216,7 @@
           <a href="https://unileste.catolica.edu.br/portal/docente-apresenta-pesquisa-sobre-hiv-em-congresso-internacional-na-africa-do-sul/" target="_blank">Congresso Mundial de Epidemiologia</a>
         </div>
       </div>
-      <div class="card">
+      <div class="card" onclick="toggleCard(this)">
         <div class="card-title">Análise de dados</div>
         <div class="card-content">
           <a href="https://souzdes.github.io/consultant/" target="_blank">🔗 Acesse aqui</a>
@@ -223,7 +237,8 @@
       <p>(Em breve)</p>
     </div>
   </section>
- <footer>
+
+  <footer>
     <div class="footer-icons">
       <a href="mailto:souza.des@gmail.com" title="E-mail">
         <svg class="icon-envelope" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -241,10 +256,15 @@
         </svg>
       </a>
     </div>
-
-  <footer>
     © 2025 Denise Souza. Todos os direitos reservados.
   </footer>
+
+  <script>
+    function toggleCard(card) {
+      const content = card.querySelector('.card-content');
+      content.classList.toggle('show');
+    }
+  </script>
 
 </body>
 </html>
