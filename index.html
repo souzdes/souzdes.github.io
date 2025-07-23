@@ -1,609 +1,128 @@
-<!DOCTYPE html> 
-
+<!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-
   <meta charset="UTF-8" />
-
   <title>Denise Souza</title>
-
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-
-    :root {
-
-      --primaria: #c97a88;
-
-      --secundaria: #fcf8f9;
-
-      --destaque: #f3d8dd;
-
-      --texto: #3b2c30;
-
-      --cinza-escuro: #333;
-
-      --rose-escuro: #a0535f;
-
-      --header-escuro: #8b3f4a;
-
-    }
-
-
-
-    * {
-
-      margin: 0;
-
-      padding: 0;
-
-      box-sizing: border-box;
-
-    }
-
-
-
     body {
-
-      font-family: "Inter", sans-serif;
-
-      background-color: var(--secundaria);
-
-      color: var(--texto);
-
       margin: 0;
-
       padding: 0;
-
-      display: flex;
-
-      flex-direction: column;
-
-      min-height: 100vh;
-
+      font-family: Arial, sans-serif;
+      background-color: #fdfdfd;
+      color: #333;
     }
-
-
 
     header {
-
-      background: linear-gradient(120deg, var(--header-escuro), var(--primaria));
-
-      color: white;
-
+      background-color: #333;
+      color: #fff;
+      padding: 40px 20px;
       text-align: center;
-
-      padding: 3rem 1rem 2rem;
-
-      animation: fadeIn 1s ease-in-out;
-
-      flex-shrink: 0;
-
     }
-
-
 
     header h1 {
-
-      font-size: 4rem;
-
-      font-family: 'Allura', cursive;
-
-      margin-bottom: 0.5rem;
-
+      margin: 0;
+      font-size: 2.5em;
+      font-weight: 400;
     }
-
-
 
     header p {
-
-      font-size: 1.2rem;
-
-      margin-top: 0.3rem;
-
+      margin: 5px 0 0;
+      font-size: 1.2em;
+      font-weight: 300;
     }
-
-
-
-    .intro-section {
-
-      display: flex;
-
-      flex-wrap: wrap;
-
-      justify-content: center;
-
-      align-items: flex-start;
-
-      padding: 2rem;
-
-      gap: 2rem;
-
-      max-width: 1100px;
-
-      margin: 0 auto;
-
-      flex-grow: 1;
-
-    }
-
-
 
     .cards {
-
       display: flex;
-
-      flex-direction: column;
-
-      gap: 2rem;
-
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 50px 20px;
     }
 
-
-
-   .card {
-
-  background-color: white;
-
-  width: 320px;       /* de 260px para 320px */
-
-  border-radius: 20px;
-
-  padding: 2rem 1.5rem;  /* de 1.5rem 1.2rem para 2rem 1.5rem */
-
-  box-shadow: 0 0 0 2px var(--primaria), 0 6px 12px rgba(0, 0, 0, 0.1);
-
-  transition: transform 0.3s ease;
-
-  cursor: pointer;
-
-}
-
-
-
-
+    .card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      width: 320px;
+      padding: 24px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
 
     .card:hover {
-
-      transform: translateY(-5px);
-
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
     }
 
-
-
-   .card-title {
-
-  font-family: "Inter", Arial, sans-serif;
-
-  font-size: 1.2rem;
-
-  color: var(--cinza-escuro);
-
-  margin-bottom: 1rem;
-
-  text-align: center;
-
-  font-weight: 400; /* peso normal, sem negrito */
-
-}
-
-
-
-
+    .card-title {
+      font-family: Arial, sans-serif;
+      font-weight: 300;
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
 
     .card-content {
-
-      max-height: 0;
-
-      overflow: hidden;
-
-      transition: max-height 0.4s ease;
-
-      font-size: 0.9rem;
-
-      display: flex;
-
-      flex-direction: column;
-
-      gap: 0.4rem;
-
-      align-items: center;
-
+      display: none;
+      margin-top: 10px;
+      font-size: 1em;
     }
-
-
-
-    .card-content.show {
-
-      max-height: 300px;
-
-      margin-top: 0.5rem;
-
-    }
-
-
 
     .card-content a {
-
+      color: #0077cc;
       text-decoration: none;
-
-      color: #333;
-
-      transition: all 0.3s ease;
-
     }
-
-
 
     .card-content a:hover {
-
       text-decoration: underline;
-
-      color: #c97c8f;
-
     }
 
-
-
-    .photo {
-
-      flex-shrink: 0;
-
+    .card.active .card-content {
+      display: block;
     }
-
-
-
-    .photo img {
-
-      width: 280px;
-
-      max-width: 100%;
-
-      border-radius: 20px;
-
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-
-    }
-
-
-
-    .blog-section {
-
-      max-width: 800px;
-
-      margin: 4rem auto 2rem;
-
-      padding: 0 1.5rem;
-
-    }
-
-
-
-    .blog-section h2 {
-
-      font-size: 2rem;
-
-      margin-bottom: 1rem;
-
-      color: var(--header-escuro);
-
-      border-bottom: 2px solid var(--destaque);
-
-      display: inline-block;
-
-      padding-bottom: 0.5rem;
-
-    }
-
-
-
-    .blog-post {
-
-      margin-top: 2rem;
-
-    }
-
-
-
-    .blog-post h3 {
-
-      font-size: 1.5rem;
-
-      color: #666;
-
-    }
-
-
-
-    .blog-post p {
-
-      font-size: 1rem;
-
-      margin-top: 0.5rem;
-
-      color: var(--cinza-escuro);
-
-    }
-
-
-
-    footer {
-
-      background-color: #f3e3e6;
-
-      padding: 1.5rem 1rem 2rem;
-
-      color: var(--texto);
-
-      text-align: center;
-
-      font-size: 0.9rem;
-
-      flex-shrink: 0;
-
-    }
-
-
-
-    .footer-icons {
-
-      display: flex;
-
-      justify-content: center;
-
-      gap: 2rem;
-
-      margin-bottom: 1rem;
-
-    }
-
-
-
-    .footer-icons a {
-
-      color: var(--cinza-escuro);
-
-      text-decoration: none;
-
-      font-size: 1.8rem;
-
-      display: flex;
-
-      align-items: center;
-
-      transition: color 0.3s ease;
-
-    }
-
-
-
-    .footer-icons a:hover {
-
-      color: var(--primaria);
-
-    }
-
-
-
-    .icon-envelope, .icon-github, .icon-linkedin {
-
-      width: 24px;
-
-      height: 24px;
-
-      fill: currentColor;
-
-    }
-
-
-
-    @keyframes fadeIn {
-
-      from {
-
-        opacity: 0;
-
-        transform: translateY(-20px);
-
-      }
-
-      to {
-
-        opacity: 1;
-
-        transform: translateY(0);
-
-      }
-
-    }
-
-
-
-    @media (max-width: 768px) {
-
-      .intro-section {
-
-        flex-direction: column;
-
-      }
-
-
-
-      .cards {
-
-        align-items: center;
-
-      }
-
-    }
-
   </style>
-
 </head>
-
 <body>
-
-
-
   <header>
-
-    <h1>Denise Souza</h1>
-
-    <p>Psicóloga | Pesquisadora</p>
-
+    <h1>Psicóloga | Pesquisadora</h1>
     <p>Mestre em Ciências</p>
-
   </header>
 
-
-
-  <section class="intro-section">
-
-    <div class="cards">
-
-      <div class="card" onclick="toggleCard(this)">
-
-        <div class="card-title">Produção científica</div>
-
-        <div class="card-content">
-
-          <a href="http://lattes.cnpq.br/4859178862619817" target="_blank" rel="noopener noreferrer">CV Lattes</a>
-
-          <a href="https://www.researchgate.net/profile/Denise-Souza-9?ev=hdr_xprf" target="_blank" rel="noopener noreferrer">ResearchGate</a>
-
-          <a href="https://scholar.google.com/citations?user=abcdefg" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-
-        </div>
-
+  <div class="cards">
+    <div class="card" onclick="toggleCard(this)">
+      <div class="card-title">Publicações</div>
+      <div class="card-content">
+        <a href="https://scholar.google.com.br/citations?user=5iBR1fUAAAAJ&hl=pt-BR" target="_blank">Google Scholar</a><br>
+        <a href="https://lattes.cnpq.br/1088677032769297" target="_blank">Currículo Lattes</a>
       </div>
+    </div>
 
-      <div class="card" onclick="toggleCard(this)">
-
-        <div class="card-title">Publicações</div>
-
-        <div class="card-content">
-
-          <a href="https://www.scielo.br/j/rsp/a/bNCbbnLNcFnqD8XGC7JZ6MH/?lang=en" target="_blank" rel="noopener noreferrer">Artigo</a>
-
-          <a href="https://acervodigital.crp04.org.br/publicacoes/das-diversas-psicologias-das-minas-2/" target="_blank" rel="noopener noreferrer">Livro</a>
-
-          <a href="https://unileste.catolica.edu.br/portal/docente-apresenta-pesquisa-sobre-hiv-em-congresso-internacional-na-africa-do-sul/" target="_blank" rel="noopener noreferrer">Congresso</a>
-
-        </div>
-
-    
-
+    <div class="card" onclick="toggleCard(this)">
+      <div class="card-title">Análises de Dados</div>
+      <div class="card-content">
+        <a href="https://souzdes.github.io/analise-de-dados/" target="_blank">Ver projetos de análise</a>
       </div>
-
     </div>
 
-
-
-    <div class="photo">
-
-      <img src="den.jpg" alt="Foto de Denise Souza">
-
+    <div class="card" onclick="toggleCard(this)">
+      <div class="card-title">Projetos</div>
+      <div class="card-content">
+        <a href="https://souzdes.github.io/consultant/" target="_blank">Acesse os projetos</a>
+      </div>
     </div>
+  </div>
 
-  </section>
-
-
-
-  <section class="blog-section">
-
-    <h2>Blog de uma psicóloga cientista</h2>
-
-
-
-    <div class="blog-post">
-
-      <h3>XII Congresso Brasileiro de Avaliação Psicológica</h3>
-
-      <p>(Em breve)</p>
-
-    </div>
-
-  </section>
-
-
-
-  <footer>
-
-    <div class="footer-icons">
-
-      <a href="mailto:souza.des@gmail.com" title="E-mail" rel="noopener noreferrer">
-
-        <svg class="icon-envelope" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-
-          <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 2v.01L12 13 4 6.01V6h16ZM4 18V8.99l8 6 8-6V18H4Z"/>
-
-        </svg>
-
-      </a>
-
-      <a href="https://github.com/souzdes" target="_blank" title="GitHub" rel="noopener noreferrer">
-
-        <svg class="icon-github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-
-          <path d="M12 0a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2.18c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.1-.75.08-.74.08-.74 1.22.09 1.86 1.26 1.86 1.26 1.08 1.85 2.83 1.32 3.52 1 .11-.78.42-1.32.76-1.63-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.65.25 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57A12 12 0 0 0 12 0Z"/>
-
-        </svg>
-
-      </a>
-
-      <a href="https://www.linkedin.com/in/denise-souza-24875027b/" target="_blank" title="LinkedIn" rel="noopener noreferrer">
-
-        <svg class="icon-linkedin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-
-          <path d="M20.45 20.45h-3.55v-5.4c0-1.29-.02-2.94-1.79-2.94-1.8 0-2.08 1.4-2.08 2.84v5.5H9.45V9h3.41v1.56h.05c.48-.91 1.65-1.86 3.39-1.86 3.63 0 4.3 2.39 4.3 5.5v6.25zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm-1.78 13h3.55V9H3.56v11.43zM22.23 0H1.77C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.23 0z"/>
-
-        </svg>
-
-      </a>
-
-    </div>
-
-    © 2025 Denise Souza. Todos os direitos reservados.
-
-  </footer>
-
-
-
-<script>
-
-  function toggleCard(clickedCard) {
-
-    const allCards = document.querySelectorAll('.card');
-
-
-
-    allCards.forEach(card => {
-
-      const content = card.querySelector('.card-content');
-
-      if (card !== clickedCard) {
-
-        content.classList.remove('show');
-
-      }
-
-    });
-
-
-
-    const clickedContent = clickedCard.querySelector('.card-content');
-
-    clickedContent.classList.toggle('show');
-
-  }
-
-</script>
-
-
-
+  <script>
+    function toggleCard(clickedCard) {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        if (card !== clickedCard) {
+          card.classList.remove('active');
+        }
+      });
+      clickedCard.classList.toggle('active');
+    }
+  </script>
 </body>
-
 </html>
