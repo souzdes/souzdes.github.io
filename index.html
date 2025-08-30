@@ -1,20 +1,18 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
   <meta charset="UTF-8" />
-  <title>Denise Souza</title>
+  <title>Denise Souza | Psicóloga</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primaria: #c97a88;
-      --secundaria: #fcf8f9;
-      --destaque: #f3d8dd;
-      --texto: #3b2c30;
-      --cinza-escuro: #333;
-      --rose-escuro: #a0535f;
-      --header-escuro: #8b3f4a;
+      --primaria: #8B6D5C;   /* Marrom suave */
+      --secundaria: #F5F2EF; /* Fundo/bege claro */
+      --destaque: #5C4A3D;   /* Marrom escuro */
+      --texto: #3B3B3B;      /* Cinza escuro */
+      --acao: #A87C6B;       /* Tom médio para links */
     }
 
     * {
@@ -27,16 +25,14 @@
       font-family: "Inter", sans-serif;
       background-color: var(--secundaria);
       color: var(--texto);
-      margin: 0;
-      padding: 0;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
 
     header {
-      background: linear-gradient(120deg, var(--header-escuro), var(--primaria));
-      color: white;
+      background: var(--primaria);
+      color: var(--secundaria);
       text-align: center;
       padding: 3rem 1rem 2rem;
       animation: fadeIn 1s ease-in-out;
@@ -73,11 +69,12 @@
     }
 
     .card {
-      background-color: white;
+      background-color: var(--secundaria);
       width: 320px;
-      border-radius: 20px;
+      border-radius: 10px;
       padding: 2rem 1.5rem;
-      box-shadow: 0 0 0 2px var(--primaria), 0 6px 12px rgba(0, 0, 0, 0.1);
+      border: 1px solid var(--primaria);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
       cursor: pointer;
     }
@@ -89,7 +86,7 @@
     .card-title {
       font-family: "Inter", Arial, sans-serif;
       font-size: 1.2rem;
-      color: var(--cinza-escuro);
+      color: var(--destaque);
       margin-bottom: 1rem;
       text-align: center;
       font-weight: 400;
@@ -113,27 +110,26 @@
 
     .card-content a {
       text-decoration: none;
-      color: #333;
+      color: var(--acao);
       transition: all 0.3s ease;
     }
 
     .card-content a:hover {
       text-decoration: underline;
-      color: #c97c8f;
     }
 
     .photo {
       flex-shrink: 0;
     }
 
-    .photo img { 
-      width: 280px; 
-      max-width: 100%; 
+    .photo img {
+      width: 280px;
+      height: 100%;
       object-fit: cover;
-      border-radius: 0; 
-      box-shadow: none; 
+      border-radius: 0;
+      box-shadow: none;
     }
-  
+
     .blog-section {
       max-width: 800px;
       margin: 4rem auto 2rem;
@@ -143,8 +139,8 @@
     .blog-section h2 {
       font-size: 2rem;
       margin-bottom: 1rem;
-      color: var(--header-escuro);
-      border-bottom: 2px solid var(--destaque);
+      color: var(--destaque);
+      border-bottom: 2px solid var(--acao);
       display: inline-block;
       padding-bottom: 0.5rem;
     }
@@ -155,17 +151,17 @@
 
     .blog-post h3 {
       font-size: 1.5rem;
-      color: #666;
+      color: var(--texto);
     }
 
     .blog-post p {
       font-size: 1rem;
       margin-top: 0.5rem;
-      color: var(--cinza-escuro);
+      color: var(--texto);
     }
 
     footer {
-      background-color: #f3e3e6;
+      background-color: var(--secundaria);
       padding: 1.5rem 1rem 2rem;
       color: var(--texto);
       text-align: center;
@@ -181,7 +177,7 @@
     }
 
     .footer-icons a {
-      color: var(--cinza-escuro);
+      color: var(--texto);
       text-decoration: none;
       font-size: 1.8rem;
       display: flex;
@@ -193,7 +189,9 @@
       color: var(--primaria);
     }
 
-    .icon-envelope, .icon-github, .icon-linkedin {
+    .icon-envelope,
+    .icon-github,
+    .icon-linkedin {
       width: 24px;
       height: 24px;
       fill: currentColor;
@@ -204,6 +202,7 @@
         opacity: 0;
         transform: translateY(-20px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -227,7 +226,7 @@
   <header>
     <h1>Denise Souza</h1>
     <p>Psicóloga | Mestre em Ciências</p>
-     </header>
+  </header>
 
   <section class="intro-section">
     <div class="cards">
@@ -254,7 +253,6 @@
         <div class="card-title">Portfólio</div>
         <div class="card-content">
           <a href="https://souzdes.github.io/consultant/" target="_blank" rel="noopener noreferrer">Análise de dados</a>
-           
         </div>
       </div>
 
@@ -264,7 +262,6 @@
       <img src="den.jpg" alt="Foto de Denise Souza">
     </div>
   </section>
-
 
   <footer>
     <div class="footer-icons">
