@@ -127,11 +127,13 @@
     }
 
     .photo img {
-      width: 280px;
-      max-width: 100%;
-      border-radius: 20px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
+  width: 280px;      /* ou outra largura desejada */
+  height: 280px;     /* mantém quadrado */
+  object-fit: cover; /* garante que a imagem preencha o quadrado sem distorcer */
+  border-radius: 0;  /* remove bordas arredondadas */
+  box-shadow: none;  /* remove sombra */
+}
+
 
     .blog-section {
       max-width: 800px;
