@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
   <style>
-    
     :root {
       --bege-claro: #F5F3EE;
       --bege-medio: #DDD6C5;
@@ -25,7 +24,7 @@
 
     body {
       font-family: "Inter", sans-serif;
-      background-color: var(--secundaria);
+      background-color: var(--bege-claro);
       color: var(--texto);
       display: flex;
       flex-direction: column;
@@ -33,8 +32,8 @@
     }
 
     header {
-      background: var(--primaria);
-      color: var(--secundaria);
+      background: var(--azul-escuro);
+      color: var(--bege-claro);
       text-align: center;
       padding: 3rem 1rem 2rem;
       animation: fadeIn 1s ease-in-out;
@@ -71,11 +70,11 @@
     }
 
     .card {
-      background-color: var(--secundaria);
+      background-color: var(--bege-medio);
       width: 320px;
       border-radius: 10px;
       padding: 2rem 1.5rem;
-      border: 1px solid var(--primaria);
+      border: 1px solid var(--azul-escuro);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
       cursor: pointer;
@@ -88,7 +87,7 @@
     .card-title {
       font-family: "Inter", Arial, sans-serif;
       font-size: 1.2rem;
-      color: var(--destaque);
+      color: var(--azul-escuro);
       margin-bottom: 1rem;
       text-align: center;
       font-weight: 400;
@@ -112,7 +111,7 @@
 
     .card-content a {
       text-decoration: none;
-      color: var(--acao);
+      color: var(--azul-suave);
       transition: all 0.3s ease;
     }
 
@@ -128,44 +127,14 @@
       width: 280px;
       height: 100%;
       object-fit: cover;
-      border-radius: 0;
-      box-shadow: none;
-    }
-
-    .blog-section {
-      max-width: 800px;
-      margin: 4rem auto 2rem;
-      padding: 0 1.5rem;
-    }
-
-    .blog-section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: var(--destaque);
-      border-bottom: 2px solid var(--acao);
-      display: inline-block;
-      padding-bottom: 0.5rem;
-    }
-
-    .blog-post {
-      margin-top: 2rem;
-    }
-
-    .blog-post h3 {
-      font-size: 1.5rem;
-      color: var(--texto);
-    }
-
-    .blog-post p {
-      font-size: 1rem;
-      margin-top: 0.5rem;
-      color: var(--texto);
+      border-radius: 10px;
+      border: 2px solid var(--azul-escuro);
     }
 
     footer {
-      background-color: var(--secundaria);
+      background-color: var(--bege-escuro);
       padding: 1.5rem 1rem 2rem;
-      color: var(--texto);
+      color: var(--azul-escuro);
       text-align: center;
       font-size: 0.9rem;
       flex-shrink: 0;
@@ -179,7 +148,7 @@
     }
 
     .footer-icons a {
-      color: var(--texto);
+      color: var(--azul-escuro);
       text-decoration: none;
       font-size: 1.8rem;
       display: flex;
@@ -188,7 +157,7 @@
     }
 
     .footer-icons a:hover {
-      color: var(--primaria);
+      color: var(--azul-suave);
     }
 
     .icon-envelope,
