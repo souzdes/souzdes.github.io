@@ -126,15 +126,14 @@
       flex-shrink: 0;
     }
 
-    .photo img {
-  width: 280px;      /* ou outra largura desejada */
-  height: 280px;     /* mantém quadrado */
-  object-fit: cover; /* garante que a imagem preencha o quadrado sem distorcer */
-  border-radius: 0;  /* remove bordas arredondadas */
-  box-shadow: none;  /* remove sombra */
-}
-
-
+    .photo img { 
+      width: 280px; 
+      max-width: 100%; 
+      object-fit: cover;
+      border-radius: 0; 
+      box-shadow: none; 
+    }
+  
     .blog-section {
       max-width: 800px;
       margin: 4rem auto 2rem;
