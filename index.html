@@ -6,21 +6,20 @@
   <title>Denise Souza | Psicóloga</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --rose-principal: #B78A8A;
+      --fundo: #FAF7F6;
       --rose-claro: #F1E7E5;
-      --bege-rosado: #E5D8D4;
-      --off-white: #FAF7F6;
-
+      --rose-medio: #D8B8B5;
+      --rose-escuro: #9A6F6F;
       --texto: #5E4B4B;
-      --texto-secundario: #7B6C6C;
-      --destaque: #9A6F6F;
       --titulo: #6E5656;
-
+      --texto-suave: #7B6C6C;
       --branco: #FFFFFF;
+      --borda: #E7DFDC;
+      --sombra: rgba(94, 75, 75, 0.10);
     }
 
     * {
@@ -31,120 +30,236 @@
 
     body {
       font-family: "Inter", sans-serif;
-      background-color: var(--off-white);
+      background: var(--fundo);
       color: var(--texto);
-      display: flex;
-      flex-direction: column;
       min-height: 100vh;
     }
 
     header {
-      background: linear-gradient(
-        135deg,
-        #F3E8E6 0%,
-        #EAD9D7 100%
-      );
-      color: var(--titulo);
-      text-align: center;
-      padding: 3rem 1rem 2rem;
-      animation: fadeIn 1s ease-in-out;
-      border-bottom: 1px solid var(--bege-rosado);
+      background: rgba(250, 247, 246, 0.92);
+      border-bottom: 1px solid var(--borda);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(8px);
     }
 
-    header h1 {
-      font-size: 4rem;
-      font-family: 'Allura', cursive;
-      color: var(--titulo);
-      margin-bottom: 0.5rem;
-      font-weight: 400;
-    }
-
-    header p {
-      font-size: 1.05rem;
-      margin-top: 0.3rem;
-      color: var(--destaque);
-      font-weight: 500;
-      letter-spacing: 0.3px;
-    }
-
-    .intro-section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 3rem 2rem;
-      gap: 2rem;
+    .navbar {
       max-width: 1100px;
       margin: 0 auto;
-      flex-grow: 1;
-    }
-
-    .cards {
+      padding: 1rem 2rem;
       display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .card {
-      background-color: var(--branco);
-      width: 320px;
-      border-radius: 12px;
-      padding: 2rem 1.5rem;
-      border: 1px solid #E7DFDC;
-      box-shadow: 0 8px 24px rgba(94, 75, 75, 0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 28px rgba(94, 75, 75, 0.12);
-    }
-
-    .card-title {
-      font-size: 1.1rem;
-      color: var(--titulo);
-      margin-bottom: 1rem;
-      text-align: center;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-
-    .card-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease;
-      font-size: 0.9rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
+      justify-content: space-between;
       align-items: center;
     }
 
-    .card-content.show {
-      max-height: 300px;
-      margin-top: 0.5rem;
-    }
-
-    .card-content a {
+    .logo {
+      font-family: "Allura", cursive;
+      font-size: 2.2rem;
+      color: var(--titulo);
       text-decoration: none;
-      color: #8B6666;
-      font-weight: 500;
-      transition: all 0.3s ease;
     }
 
-    .card-content a:hover {
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    nav a {
+      color: var(--texto);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--rose-escuro);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #F3E8E6 0%, #EAD9D7 100%);
+      padding: 5rem 2rem;
+      border-bottom: 1px solid var(--borda);
+    }
+
+    .hero-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.75rem;
+      color: var(--rose-escuro);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-family: "Allura", cursive;
+      font-size: 5rem;
+      color: var(--titulo);
+      font-weight: 400;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .hero h2 {
+      font-size: 1.35rem;
+      color: var(--texto);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      max-width: 620px;
+      color: var(--texto-suave);
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    .hero-card {
+      background: var(--branco);
+      border: 1px solid var(--borda);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 12px 32px var(--sombra);
+    }
+
+    .hero-card h3 {
+      color: var(--titulo);
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      color: var(--texto-suave);
+      font-size: 0.95rem;
+    }
+
+    .hero-card li::before {
+      content: "•";
+      color: var(--rose-escuro);
+      margin-right: 0.5rem;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-title h2 {
+      color: var(--titulo);
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title p {
+      color: var(--texto-suave);
+      font-size: 0.95rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .info-card {
+      background: var(--branco);
+      border: 1px solid var(--borda);
+      border-radius: 18px;
+      padding: 1.8rem;
+      box-shadow: 0 8px 24px rgba(94, 75, 75, 0.07);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(94, 75, 75, 0.12);
+    }
+
+    .info-card h3 {
+      color: var(--titulo);
+      font-size: 1.05rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .info-card p {
+      color: var(--texto-suave);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .links-section {
+      background: var(--rose-claro);
+      max-width: 100%;
+      padding: 4rem 2rem;
+      border-top: 1px solid var(--borda);
+      border-bottom: 1px solid var(--borda);
+    }
+
+    .links-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .link-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .link-card {
+      background: var(--branco);
+      border: 1px solid var(--borda);
+      border-radius: 18px;
+      padding: 1.8rem;
+      text-align: center;
+      box-shadow: 0 8px 22px rgba(94, 75, 75, 0.08);
+    }
+
+    .link-card h3 {
+      color: var(--titulo);
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .link-card a {
+      display: block;
+      color: var(--rose-escuro);
+      text-decoration: none;
+      font-weight: 500;
+      margin: 0.45rem 0;
+      transition: color 0.3s ease;
+    }
+
+    .link-card a:hover {
+      color: var(--titulo);
       text-decoration: underline;
-      color: #6E5656;
     }
 
     footer {
-      background-color: #EFE6E4;
-      padding: 1.5rem 1rem 2rem;
-      color: var(--destaque);
+      background: #EFE6E4;
+      color: var(--texto-suave);
       text-align: center;
-      font-size: 0.9rem;
-      border-top: 1px solid var(--bege-rosado);
+      padding: 2rem 1rem;
     }
 
     .footer-icons {
@@ -155,16 +270,15 @@
     }
 
     .footer-icons a {
-      color: var(--destaque);
+      color: var(--rose-escuro);
       text-decoration: none;
-      font-size: 1.8rem;
       display: flex;
       align-items: center;
       transition: color 0.3s ease, transform 0.3s ease;
     }
 
     .footer-icons a:hover {
-      color: #7D6161;
+      color: var(--titulo);
       transform: translateY(-2px);
     }
 
@@ -176,36 +290,22 @@
       fill: currentColor;
     }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
+    @media (max-width: 850px) {
+      nav {
+        display: none;
       }
 
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 3.4rem;
+      .hero-container {
+        grid-template-columns: 1fr;
       }
 
-      .intro-section {
-        flex-direction: column;
-        padding: 2rem 1rem;
+      .hero h1 {
+        font-size: 4rem;
       }
 
-      .cards {
-        align-items: center;
-        width: 100%;
-      }
-
-      .card {
-        width: 100%;
-        max-width: 340px;
+      .grid,
+      .link-cards {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -214,33 +314,100 @@
 <body>
 
   <header>
-    <h1>Denise Souza</h1>
-    <p>Psicóloga | Mestre em Ciências</p>
+    <div class="navbar">
+      <a class="logo" href="#">Denise Souza</a>
+      <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#interesses">Interesses</a>
+        <a href="#links">Links</a>
+        <a href="mailto:souza.des@gmail.com">Contato</a>
+      </nav>
+    </div>
   </header>
 
-  <section class="intro-section">
-    <div class="cards">
+  <main>
+    <section class="hero" id="sobre">
+      <div class="hero-container">
+        <div>
+          <div class="eyebrow">Psicologia · Saúde Pública · Pesquisa</div>
+          <h1>Denise Souza</h1>
+          <h2>Psicóloga | Mestre em Ciências</h2>
+          <p>
+            Atuação e produção acadêmica voltadas à saúde pública, saúde mental,
+            HIV/Aids, vulnerabilidades sociais e análise de dados em saúde.
+          </p>
+        </div>
 
-      <div class="card" onclick="toggleCard(this)">
-        <div class="card-title">Acadêmico</div>
-        <div class="card-content">
-          <a href="http://lattes.cnpq.br/4859178862619817" target="_blank">CV Lattes</a>
-          <a href="https://www.researchgate.net/profile/Denise-Souza-9" target="_blank">ResearchGate</a>
-          <a href="https://scholar.google.com" target="_blank">Google Scholar</a>
+        <div class="hero-card">
+          <h3>Áreas de interesse</h3>
+          <ul>
+            <li>Saúde pública e vigilância em saúde</li>
+            <li>HIV/Aids e adesão ao tratamento</li>
+            <li>Saúde mental e desigualdades sociais</li>
+            <li>Pesquisa, dados e produção científica</li>
+          </ul>
         </div>
       </div>
+    </section>
 
-      <div class="card" onclick="toggleCard(this)">
-        <div class="card-title">Publicações</div>
-        <div class="card-content">
-          <a href="https://link.springer.com/article/10.1186/s13690-026-01852-z" target="_blank">Artigo</a>
-          <a href="https://acervodigital.crp04.org.br/publicacoes/das-diversas-psicologias-das-minas-2/" target="_blank">Livro</a>
-          <a href="https://www.unileste.catolica.edu.br/" target="_blank">Congresso</a>
-        </div>
+    <section id="interesses">
+      <div class="section-title">
+        <h2>Atuação e pesquisa</h2>
+        <p>Temas que orientam minha trajetória acadêmica e profissional.</p>
       </div>
 
-    </div>
-  </section>
+      <div class="grid">
+        <div class="info-card">
+          <h3>Saúde pública</h3>
+          <p>
+            Interesse em políticas públicas, cuidado em saúde, vigilância e
+            organização dos serviços.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>HIV/Aids</h3>
+          <p>
+            Estudos sobre adesão ao tratamento, vulnerabilidades e cuidado de
+            mulheres vivendo com HIV/Aids.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Análise de dados</h3>
+          <p>
+            Aplicação de métodos quantitativos, modelos preditivos e visualização
+            de dados em saúde.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="links-section" id="links">
+      <div class="links-container">
+        <div class="section-title">
+          <h2>Links acadêmicos</h2>
+          <p>Currículo, publicações e perfis profissionais.</p>
+        </div>
+
+        <div class="link-cards">
+          <div class="link-card">
+            <h3>Acadêmico</h3>
+            <a href="http://lattes.cnpq.br/4859178862619817" target="_blank">CV Lattes</a>
+            <a href="https://www.researchgate.net/profile/Denise-Souza-9" target="_blank">ResearchGate</a>
+            <a href="https://scholar.google.com" target="_blank">Google Scholar</a>
+          </div>
+
+          <div class="link-card">
+            <h3>Publicações</h3>
+            <a href="https://link.springer.com/article/10.1186/s13690-026-01852-z" target="_blank">Artigo</a>
+            <a href="https://acervodigital.crp04.org.br/publicacoes/das-diversas-psicologias-das-minas-2/" target="_blank">Livro</a>
+            <a href="https://www.unileste.catolica.edu.br/" target="_blank">Congresso</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <div class="footer-icons">
@@ -267,22 +434,6 @@
 
     © 2026 Denise Souza. Todos os direitos reservados.
   </footer>
-
-  <script>
-    function toggleCard(clickedCard) {
-      const allCards = document.querySelectorAll('.card');
-
-      allCards.forEach(card => {
-        const content = card.querySelector('.card-content');
-        if (card !== clickedCard) {
-          content.classList.remove('show');
-        }
-      });
-
-      const clickedContent = clickedCard.querySelector('.card-content');
-      clickedContent.classList.toggle('show');
-    }
-  </script>
 
 </body>
 </html>
