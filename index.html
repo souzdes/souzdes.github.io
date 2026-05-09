@@ -6,7 +6,7 @@
   <title>Denise Souza | Psicóloga</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -14,10 +14,12 @@
       --rose-claro: #F1E7E5;
       --bege-rosado: #E5D8D4;
       --off-white: #FAF7F6;
-      --texto: #2F3437;
-      --texto-secundario: #6B7280;
+
+      --texto: #5E4B4B;
+      --texto-secundario: #7B6C6C;
       --destaque: #9A6F6F;
-      --grafite: #1F2933;
+      --titulo: #6E5656;
+
       --branco: #FFFFFF;
     }
 
@@ -42,7 +44,7 @@
         #F3E8E6 0%,
         #EAD9D7 100%
       );
-      color: var(--grafite);
+      color: var(--titulo);
       text-align: center;
       padding: 3rem 1rem 2rem;
       animation: fadeIn 1s ease-in-out;
@@ -51,11 +53,10 @@
 
     header h1 {
       font-size: 4rem;
-      font-family: "Cormorant Garamond", serif;
-      font-weight: 600;
-      letter-spacing: 1px;
-      color: var(--grafite);
+      font-family: 'Allura', cursive;
+      color: var(--titulo);
       margin-bottom: 0.5rem;
+      font-weight: 400;
     }
 
     header p {
@@ -90,19 +91,19 @@
       border-radius: 12px;
       padding: 2rem 1.5rem;
       border: 1px solid #E7DFDC;
-      box-shadow: 0 8px 24px rgba(31, 41, 51, 0.06);
+      box-shadow: 0 8px 24px rgba(94, 75, 75, 0.08);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 12px 28px rgba(31, 41, 51, 0.10);
+      box-shadow: 0 12px 28px rgba(94, 75, 75, 0.12);
     }
 
     .card-title {
       font-size: 1.1rem;
-      color: var(--grafite);
+      color: var(--titulo);
       margin-bottom: 1rem;
       text-align: center;
       font-weight: 600;
@@ -127,14 +128,14 @@
 
     .card-content a {
       text-decoration: none;
-      color: #8B5E5E;
+      color: #8B6666;
       font-weight: 500;
       transition: all 0.3s ease;
     }
 
     .card-content a:hover {
       text-decoration: underline;
-      color: var(--grafite);
+      color: #6E5656;
     }
 
     footer {
@@ -163,7 +164,7 @@
     }
 
     .footer-icons a:hover {
-      color: var(--grafite);
+      color: #7D6161;
       transform: translateY(-2px);
     }
 
@@ -189,7 +190,7 @@
 
     @media (max-width: 768px) {
       header h1 {
-        font-size: 3rem;
+        font-size: 3.4rem;
       }
 
       .intro-section {
