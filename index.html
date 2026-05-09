@@ -117,40 +117,24 @@
       margin-bottom: 1rem;
     }
 
-    .hero p {
-      max-width: 620px;
-      color: var(--texto-suave);
-      line-height: 1.7;
-      font-size: 1rem;
-    }
-
-    .hero-card {
-      background: var(--branco);
-      border: 1px solid var(--borda);
-      border-radius: 20px;
-      padding: 2rem;
-      box-shadow: 0 12px 32px var(--sombra);
-    }
-
-    .hero-card h3 {
-      color: var(--titulo);
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero-card ul {
-      list-style: none;
+    .hero-photo {
       display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-      color: var(--texto-suave);
-      font-size: 0.95rem;
+      justify-content: center;
+      align-items: center;
     }
 
-    .hero-card li::before {
-      content: "•";
-      color: var(--rose-escuro);
-      margin-right: 0.5rem;
+    .hero-photo img {
+      width: 320px;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 24px;
+      border: 1px solid var(--borda);
+      box-shadow: 0 12px 32px rgba(94, 75, 75, 0.12);
+      transition: transform 0.3s ease;
+    }
+
+    .hero-photo img:hover {
+      transform: translateY(-4px);
     }
 
     section {
@@ -303,6 +287,12 @@
         font-size: 4rem;
       }
 
+      .hero-photo img {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+      }
+
       .grid,
       .link-cards {
         grid-template-columns: 1fr;
@@ -316,116 +306,141 @@
   <header>
     <div class="navbar">
       <a class="logo" href="#">Denise Souza</a>
+
       <nav>
         <a href="#sobre">Sobre</a>
         <a href="#interesses">Interesses</a>
         <a href="#links">Links</a>
-        </nav>
+      </nav>
     </div>
   </header>
 
   <main>
+
     <section class="hero" id="sobre">
+
       <div class="hero-container">
+
         <div>
-          <div class="eyebrow">Psicologia · Saúde Pública · Pesquisa</div>
-          <h1>Denise Souza</h1>
-          <h2>Psicóloga | Pesquisadora | Mestre em Ciências</h2>
+          <div class="eyebrow">
+            Psicologia · Saúde Pública · Pesquisa
           </div>
 
-        <div class="hero-card">
-          <h3>Áreas de interesse</h3>
-          <ul>
-            <li>Políticas sociais, saúde pública e epidemiologia</li>
-            <li>Vulnerabilidades em saúde e perspectivas de gênero</li>
-            <li>Pesquisa, dados e produção científica</li>
-          </ul>
+          <h1>Denise Souza</h1>
+
+          <h2>
+            Psicóloga | Pesquisadora | Mestre em Ciências
+          </h2>
         </div>
+
+        <div class="hero-photo">
+          <img src="foto.jpg" alt="Foto de Denise Souza">
+        </div>
+
       </div>
+
     </section>
 
     <section id="interesses">
+
       <div class="section-title">
         <h2>Atuação e pesquisa</h2>
-        <p>Temas que orientam minha trajetória acadêmica e profissional</p>
+        <p>
+          Temas que orientam minha trajetória acadêmica e profissional
+        </p>
       </div>
 
       <div class="grid">
+
         <div class="info-card">
           <h3>Saúde pública</h3>
+
           <p>
-            Epidemiologia e determinantes sociais em saúde, organização programática do cuidado 
+            Epidemiologia e determinantes sociais em saúde,
+            organização programática do cuidado
           </p>
         </div>
 
-        <div class="grid">
         <div class="info-card">
           <h3>Determinantes sociais de saúde</h3>
+
           <p>
-            Vulnerabilidades em saúde, desigualdades de gênero, saúde mental 
+            Vulnerabilidades em saúde,
+            desigualdades de gênero,
+            saúde mental
           </p>
         </div>
-       
+
         <div class="info-card">
           <h3>Análise de dados</h3>
+
           <p>
-            Aplicação de métodos quantitativos em saúde, modelagem estatística e aprendizagem de máquina
+            Aplicação de métodos quantitativos em saúde,
+            modelagem estatística e aprendizagem de máquina
           </p>
         </div>
+
       </div>
+
     </section>
 
     <section class="links-section" id="links">
+
       <div class="links-container">
+
         <div class="section-title">
           <h2>Links acadêmicos</h2>
-          <p>Perfis profissionais e publicações recentes</p>
+
+          <p>
+            Perfis profissionais e publicações recentes
+          </p>
         </div>
 
         <div class="link-cards">
+
           <div class="link-card">
+
             <h3>Acadêmico</h3>
-            <a href="http://lattes.cnpq.br/4859178862619817" target="_blank">CV Lattes</a>
-            <a href="https://www.researchgate.net/profile/Denise-Souza-6?ev=hdr_xprf" target="_blank">ResearchGate</a>
-            <a href="https://scholar.google.com/citations?user=nf6DXDwAAAAJ&hl=pt-BR" target="_blank">Google Scholar</a>
+
+            <a href="http://lattes.cnpq.br/4859178862619817" target="_blank">
+              CV Lattes
+            </a>
+
+            <a href="https://www.researchgate.net/profile/Denise-Souza-6?ev=hdr_xprf" target="_blank">
+              ResearchGate
+            </a>
+
+            <a href="https://scholar.google.com/citations?user=nf6DXDwAAAAJ&hl=pt-BR" target="_blank">
+              Google Scholar
+            </a>
+
           </div>
 
           <div class="link-card">
+
             <h3>Publicações</h3>
-            <a href="https://link.springer.com/article/10.1186/s13690-026-01852-z" target="_blank">Artigo</a>
-            <a href="https://acervodigital.crp04.org.br/publicacoes/das-diversas-psicologias-das-minas-2/" target="_blank">Livro</a>
-            <a href="https://www.unileste.catolica.edu.br/" target="_blank">Congresso</a>
+
+            <a href="https://link.springer.com/article/10.1186/s13690-026-01852-z" target="_blank">
+              Artigo
+            </a>
+
+            <a href="https://acervodigital.crp04.org.br/publicacoes/das-diversas-psicologias-das-minas-2/" target="_blank">
+              Livro
+            </a>
+
+            <a href="https://www.unileste.catolica.edu.br/" target="_blank">
+              Congresso
+            </a>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
+
   </main>
-
-  <footer>
-    <div class="footer-icons">
-
-      <a href="mailto:souza.des@gmail.com" title="E-mail">
-        <svg class="icon-envelope" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 2L12 13 4 6h16ZM4 18V8.99l8 6 8-6V18H4Z"/>
-        </svg>
-      </a>
-
-      <a href="https://github.com/souzdes" target="_blank" title="GitHub">
-        <svg class="icon-github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path d="M12 0a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2.18c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.1-.75.08-.74.08-.74 1.22.09 1.86 1.26 1.86 1.26 1.08 1.85 2.83 1.32 3.52 1 .11-.78.42-1.32.76-1.63-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.30-.54-1.52.12-3.17 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.65.25 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57A12 12 0 0 0 12 0Z"/>
-        </svg>
-      </a>
-
-      <a href="https://www.linkedin.com/in/denise-souza-755045400/" target="_blank" title="LinkedIn">
-        <svg class="icon-linkedin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path d="M20.45 20.45h-3.55v-5.4c0-1.29-.02-2.94-1.79-2.94-1.8 0-2.08 1.4-2.08 2.84v5.5H9.45V9h3.41v1.56h.05c.48-.91 1.65-1.86 3.39-1.86 3.63 0 4.3 2.39 4.3 5.5v6.25zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm-1.78 13h3.55V9H3.56v11.43z"/>
-        </svg>
-      </a>
-
-    </div>
-
-    © 2026 Denise Souza. Todos os direitos reservados.
-  </footer>
 
 </body>
 </html>
