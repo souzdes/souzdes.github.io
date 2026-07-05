@@ -367,37 +367,64 @@
       font-size: 0.9rem;
     }
 
-    .approach-box {
+    .approaches {
+      background: linear-gradient(180deg, #FCF8F7, #F6ECEB);
+      max-width: 100%;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .approaches-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    .approach-intro {
+      max-width: 850px;
+      margin: 0 auto 3rem;
+      text-align: center;
+      color: var(--text-soft);
+    }
+
+    .approach-cards {
       display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 2rem;
-      align-items: center;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .approach-card {
       background: #FCF8F7;
       border: 1px solid var(--border);
-      border-radius: 30px;
-      padding: 3rem;
-      box-shadow: 0 12px 30px var(--shadow);
+      border-radius: 26px;
+      padding: 2rem;
+      box-shadow: 0 10px 26px var(--shadow);
+      position: relative;
+      overflow: hidden;
     }
 
-    .approach-label {
-      background: linear-gradient(180deg, #F8EFED, #EED8D5);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 2.4rem 2rem;
-      text-align: center;
+    .approach-card::before {
+      content: "";
+      width: 70px;
+      height: 3px;
+      background: var(--gold);
+      position: absolute;
+      top: 0;
+      left: 2rem;
+      border-radius: 999px;
     }
 
-    .approach-label h3 {
+    .approach-card h3 {
       font-family: "Cormorant Infant", serif;
-      color: var(--rose-dark);
-      font-size: 2.7rem;
+      color: var(--brown);
+      font-size: 1.65rem;
       font-weight: 500;
-      line-height: 1.1;
+      margin-bottom: 0.8rem;
     }
 
-    .approach-text p {
+    .approach-card p {
       color: var(--text-soft);
-      margin-bottom: 1rem;
+      font-size: 0.95rem;
     }
 
     .contact {
@@ -415,7 +442,7 @@
 
     .contact-links {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.2rem;
       margin-top: 2.5rem;
     }
@@ -456,6 +483,39 @@
       text-decoration: underline;
     }
 
+    .email-contact {
+      margin-top: 3.5rem;
+      text-align: center;
+    }
+
+    .email-icon {
+      width: 34px;
+      height: 34px;
+      fill: var(--rose-main);
+      transition: all 0.3s ease;
+    }
+
+    .email-icon:hover {
+      fill: var(--rose-dark);
+      transform: translateY(-2px);
+    }
+
+    .email-contact p {
+      margin-top: 0.7rem;
+      font-size: 0.95rem;
+    }
+
+    .email-contact a {
+      color: var(--rose-main);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .email-contact p a:hover {
+      text-decoration: underline;
+      color: var(--brown);
+    }
+
     footer {
       background: var(--brown);
       color: rgba(255, 255, 255, 0.72);
@@ -471,8 +531,8 @@
 
       .hero-inner,
       .cards,
-      .contact-links,
-      .approach-box {
+      .approach-cards,
+      .contact-links {
         grid-template-columns: 1fr;
       }
 
@@ -494,8 +554,7 @@
         max-width: 300px;
       }
 
-      .about-box,
-      .approach-box {
+      .about-box {
         padding: 2rem;
       }
     }
@@ -511,7 +570,7 @@
       <nav>
         <a href="#sobre">Sobre</a>
         <a href="#servicos">Serviços</a>
-        <a href="#abordagem">Abordagem</a>
+        <a href="#abordagens">Abordagens</a>
         <a href="#contato">Contato</a>
       </nav>
     </div>
@@ -530,23 +589,25 @@
         <div class="hero-content">
           <div class="ornament"></div>
 
-          <div class="eyebrow">Psicoterapia on-line para mulheres</div>
+          <div class="eyebrow">Atendimento psicológico on-line para mulheres</div>
 
           <h1>Denise Souza</h1>
 
           <h2>Psicóloga | Doutora em Ciências</h2>
 
           <p>
-            Espaço de escuta, acolhimento e construção destinado a mulheres
-                    </p>
+            Escuta qualificada e cuidado psicológico baseado em evidências 
+          </p>
 
           <div class="hero-tags">
             <span class="tag">Psicoterapia</span>
             <span class="tag">One Session Therapy</span>
-            <span class="tag">Supervisão</span>
+            <span class="tag">Supervisão clínica</span>
           </div>
 
- 
+          <div class="buttons">
+            <a href="#contato" class="button">Entrar em contato</a>
+
             <a href="#" class="button button-outline" target="_blank">
               Agendar atendimento
             </a>
@@ -559,23 +620,28 @@
     <section id="sobre">
       <div class="section-title">
         <div class="small">Quem sou</div>
-               
+        <h2>Escuta clínica qualificada</h2>
+        <p>
+          Prática clínica direcionada a mulheres integrando acolhimento,
+          ciência e cuidado.
+        </p>
       </div>
 
       <div class="about-box">
         <p>
-          Psicóloga com 20 anos de experiência em atendimento clínico especializado. 
-          Atuação direcionada ao atendimento de mulheres, com foco na compreensão das dificuldades emocionais e no desenvolvimento de estratégias 
-          para lidar com desafios da vida cotidiana.
+          Atuação clínica direcionada ao atendimento de mulheres, com foco na compreensão das
+          dificuldades emocionais e no desenvolvimento de estratégias para lidar com
+          desafios da vida cotidiana.
         </p>
 
         <p>
-          Abordagem a partir de práticas baseadas em evidências científicas, que busca compreender a 
-          relação entre pensamentos, emoções, comportamentos e experiências de vida.
+          Abordagem a partir de referenciais baseados em evidências científicas, buscando
+          compreender a relação entre emoções, pensamentos, comportamentos, história de vida
+          e contexto social.
         </p>
 
         <p>
-          O objetivo é oferecer um espaço seguro, ético e acolhedor para que cada
+         Espaço seguro, ético e acolhedor para que cada
           mulher possa refletir sobre sua história, fortalecer recursos pessoais e
           construir possibilidades de mudança.
         </p>
@@ -588,7 +654,7 @@
           <div class="small">Serviços</div>
           <h2>Modalidades de atendimento</h2>
           <p>
-            Atendimentos psicológicos on-line
+            Atendimentos psicológicos on-line voltados para mulheres adultas e supervisão clínica para profissionais.
           </p>
         </div>
 
@@ -598,7 +664,7 @@
             <h3>Psicoterapia</h3>
             <p>
               Processo terapêutico para compreender dificuldades emocionais,
-              desenvolver habilidades de enfrentamento e promover mudanças consistentes
+              desenvolver habilidades de enfrentamento e promover mudanças consistentes.
             </p>
           </div>
 
@@ -607,7 +673,7 @@
             <h3>One Session Therapy</h3>
             <p>
               Atendimento focado em uma demanda específica, com o objetivo de produzir
-              clareza, organização e estratégias possíveis em uma única sessão
+              clareza, organização e estratégias possíveis em uma única sessão.
             </p>
           </div>
 
@@ -615,8 +681,8 @@
             <div class="card-number">03</div>
             <h3>Supervisão clínica</h3>
             <p>
-              Um espaço colaborativo para discussão de casos, 
-              integração entre teoria e prática e desenvolvimento contínuo da atuação clínica
+              Espaço destinado a profissionais que desejam aprofundar a compreensão de casos,
+              fortalecer o raciocínio clínico e qualificar sua prática.
             </p>
           </div>
         </div>
@@ -629,22 +695,68 @@
         <p>
           O cuidado psicológico pode auxiliar mulheres em diferentes momentos da vida,
           especialmente quando há sofrimento emocional, sobrecarga, insegurança ou
-          necessidade de reorganização pessoal. A proposta é desenvolver um trabalho colaborativo, respeitando a história,
-            o ritmo e os objetivos de cada mulher.
+          necessidade de reorganização pessoal.
         </p>
 
         <div class="list">
-          <span>Regulação emocional</span
           <span>Ansiedade</span>
           <span>Depressão</span>
           <span>Sobrecarga emocional</span>
           <span>Mudanças de vida</span>
+          <span>Experiência de traumas</span>
           <span>Desenvolvimento pessoal</span>
         </div>
       </div>
     </section>
 
- 
+    <section class="approaches" id="abordagens">
+      <div class="approaches-inner">
+        <div class="section-title">
+          <div class="small">Abordagens</div>
+          <h2>Prática clínica</h2>
+          <p>
+            Cuidado psicológico baseado em evidências, com atenção à história, ao contexto
+            e às necessidades de cada mulher.
+          </p>
+        </div>
+
+        <p class="approach-intro">
+          Atuação integra referenciais científicos para compreender
+          a complexidade da experiência humana e construir intervenções individualizadas,
+          respeitando os objetivos, o ritmo e o momento de vida de cada paciente.
+        </p>
+
+        <div class="approach-cards">
+          <div class="approach-card">
+            <h3>Terapia Cognitivo-Comportamental</h3>
+            <p>
+              Abordagem baseada em evidências que auxilia na compreensão da relação entre
+              pensamentos, emoções e comportamentos, favorecendo o desenvolvimento de
+              habilidades para enfrentar dificuldades emocionais.
+            </p>
+          </div>
+
+          <div class="approach-card">
+            <h3>Terapia do Esquema</h3>
+            <p>
+              Modelo integrativo que amplia a compreensão de padrões emocionais e
+              comportamentais construídos ao longo da vida, especialmente aqueles que se
+              repetem nos relacionamentos e na autoestima.
+            </p>
+          </div>
+
+          <div class="approach-card">
+            <h3>Neurociência e Comportamento</h3>
+            <p>
+              Conhecimentos das neurociências contribuem para compreender como processos
+              cerebrais, aprendizagem, regulação emocional e comportamento se relacionam
+              na construção do sofrimento e da mudança.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="contact" id="contato">
       <div class="contact-inner">
         <div class="section-title">
@@ -677,17 +789,22 @@
             </a>
           </div>
 
-          <div class="contact-card">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        </div>
+
+        <div class="email-contact">
+          <a href="mailto:souza.des@gmail.com" aria-label="Enviar e-mail">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="email-icon">
               <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 2-8 5.5L4 6h16ZM4 18V8.4l8 5.5 8-5.5V18H4Z"/>
             </svg>
-            <h3>E-mail</h3>
+          </a>
+
+          <p>
             <a href="mailto:souza.des@gmail.com">
               souza.des@gmail.com
             </a>
-          </div>
-
+          </p>
         </div>
+
       </div>
     </section>
 
