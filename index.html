@@ -10,7 +10,6 @@
   <style>
     :root {
       --background: #FAF6F5;
-      --background-rose: #F6EEEC;
       --rose-light: #E8CECB;
       --rose-soft: #D8B7B4;
       --rose-medium: #BC8D8A;
@@ -23,7 +22,7 @@
       --text: #5C4949;
       --text-soft: #7A6665;
       --border: #EADDD9;
-      --shadow: rgba(90, 69, 69, 0.11);
+      --shadow: rgba(90, 69, 69, 0.12);
     }
 
     * {
@@ -47,7 +46,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(250, 246, 245, 0.92);
+      background: rgba(250, 246, 245, 0.94);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
     }
@@ -72,7 +71,7 @@
 
     nav {
       display: flex;
-      gap: 1.5rem;
+      gap: 1.4rem;
     }
 
     nav a {
@@ -87,48 +86,59 @@
     }
 
     .hero {
-      min-height: 84vh;
+      min-height: 86vh;
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
       padding: 5rem 2rem;
       background:
-        radial-gradient(circle at top center, rgba(188, 141, 138, 0.22), transparent 44%),
+        radial-gradient(circle at top right, rgba(188, 141, 138, 0.22), transparent 40%),
         linear-gradient(180deg, #FAF6F5 0%, #F3E5E3 100%);
       border-bottom: 1px solid var(--border);
     }
 
+    .hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .photo-wrap {
+      position: relative;
+      max-width: 380px;
+      margin: 0 auto;
+    }
+
+    .photo-bg {
+      position: absolute;
+      inset: 28px -28px -28px 28px;
+      background: var(--rose-soft);
+      border-radius: 190px 190px 12px 12px;
+      opacity: 0.55;
+    }
+
+    .photo-wrap img {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: 190px 190px 12px 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 18px 42px var(--shadow);
+      display: block;
+    }
+
     .hero-content {
-      max-width: 850px;
+      text-align: left;
     }
 
     .ornament {
-      width: 110px;
+      width: 100px;
       height: 1px;
       background: var(--gold);
-      margin: 0 auto 1.6rem;
-      position: relative;
-    }
-
-    .ornament::before,
-    .ornament::after {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border: 1px solid var(--gold);
-      border-radius: 50%;
-      position: absolute;
-      top: -4px;
-      background: var(--background);
-    }
-
-    .ornament::before {
-      left: -4px;
-    }
-
-    .ornament::after {
-      right: -4px;
+      margin-bottom: 1.6rem;
     }
 
     .eyebrow {
@@ -142,7 +152,7 @@
 
     .hero h1 {
       font-family: "Cormorant Infant", serif;
-      font-size: clamp(3.6rem, 8vw, 7rem);
+      font-size: clamp(3.6rem, 8vw, 6.8rem);
       font-weight: 500;
       line-height: 0.95;
       color: var(--brown);
@@ -153,31 +163,36 @@
       font-size: clamp(1.05rem, 2vw, 1.35rem);
       font-weight: 500;
       color: var(--taupe);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.4rem;
     }
 
     .hero p {
-      max-width: 690px;
-      margin: 0 auto 2rem;
+      max-width: 650px;
       color: var(--text-soft);
       font-size: 1rem;
+      margin-bottom: 2rem;
     }
 
     .hero-tags {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
       gap: 0.8rem;
-      margin-bottom: 2.2rem;
+      margin-bottom: 2rem;
     }
 
     .tag {
       border: 1px solid var(--rose-soft);
-      background: rgba(255, 255, 255, 0.48);
+      background: rgba(255, 255, 255, 0.52);
       color: var(--taupe);
       padding: 0.55rem 1rem;
       border-radius: 999px;
       font-size: 0.85rem;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 0.9rem;
+      flex-wrap: wrap;
     }
 
     .button {
@@ -196,6 +211,18 @@
     .button:hover {
       background: var(--rose-dark);
       transform: translateY(-2px);
+    }
+
+    .button-outline {
+      background: transparent;
+      color: var(--rose-dark);
+      border: 1px solid var(--rose-medium);
+      box-shadow: none;
+    }
+
+    .button-outline:hover {
+      background: var(--rose-light);
+      color: var(--brown);
     }
 
     section {
@@ -240,26 +267,11 @@
       box-shadow: 0 12px 30px var(--shadow);
       max-width: 900px;
       margin: 0 auto;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .about-box::before {
-      content: "";
-      position: absolute;
-      width: 210px;
-      height: 210px;
-      background: rgba(216, 183, 180, 0.26);
-      border-radius: 50%;
-      top: -90px;
-      right: -90px;
     }
 
     .about-box p {
       margin-bottom: 1rem;
       color: var(--text-soft);
-      position: relative;
-      z-index: 1;
     }
 
     .services {
@@ -287,12 +299,6 @@
       border-radius: 26px;
       padding: 2rem;
       box-shadow: 0 10px 26px var(--shadow);
-      transition: all 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 16px 34px rgba(90, 69, 69, 0.15);
     }
 
     .card-number {
@@ -409,7 +415,7 @@
 
     .contact-links {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.2rem;
       margin-top: 2.5rem;
     }
@@ -420,17 +426,20 @@
       border-radius: 24px;
       padding: 2rem;
       box-shadow: 0 10px 26px var(--shadow);
-      transition: all 0.3s ease;
+      text-align: center;
     }
 
-    .contact-card:hover {
-      transform: translateY(-4px);
+    .contact-card svg {
+      width: 30px;
+      height: 30px;
+      margin-bottom: 0.9rem;
+      fill: var(--rose-main);
     }
 
     .contact-card h3 {
       font-family: "Cormorant Infant", serif;
       color: var(--brown);
-      font-size: 1.8rem;
+      font-size: 1.7rem;
       margin-bottom: 0.7rem;
       font-weight: 500;
     }
@@ -439,6 +448,7 @@
       color: var(--rose-main);
       font-weight: 600;
       text-decoration: none;
+      font-size: 0.94rem;
     }
 
     .contact-card a:hover {
@@ -454,24 +464,39 @@
       font-size: 0.85rem;
     }
 
-    @media (max-width: 860px) {
+    @media (max-width: 900px) {
       nav {
         display: none;
       }
 
+      .hero-inner,
       .cards,
       .contact-links,
       .approach-box {
         grid-template-columns: 1fr;
       }
 
+      .hero-content {
+        text-align: center;
+      }
+
+      .ornament {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-tags,
+      .buttons {
+        justify-content: center;
+      }
+
+      .photo-wrap {
+        max-width: 300px;
+      }
+
       .about-box,
       .approach-box {
         padding: 2rem;
-      }
-
-      .hero {
-        min-height: auto;
       }
     }
   </style>
@@ -494,28 +519,43 @@
 
   <main>
 
-    <section class="hero">
-      <div class="hero-content">
-        <div class="ornament"></div>
+    <section class="hero" id="inicio">
+      <div class="hero-inner">
 
-        <div class="eyebrow">Psicologia para mulheres</div>
-
-        <h1>Denise Souza</h1>
-
-        <h2>Psicóloga · Atendimento psicológico on-line</h2>
-
-        <p>
-          Um espaço de escuta, acolhimento e construção de estratégias para mulheres adultas,
-          com base na Terapia Cognitivo-Comportamental.
-        </p>
-
-        <div class="hero-tags">
-          <span class="tag">Psicoterapia</span>
-          <span class="tag">One Session Therapy</span>
-          <span class="tag">Terapia Cognitivo-Comportamental</span>
+        <div class="photo-wrap">
+          <div class="photo-bg"></div>
+          <img src="foto.jpg" alt="Foto de Denise Souza">
         </div>
 
-        <a href="#contato" class="button">Entrar em contato</a>
+        <div class="hero-content">
+          <div class="ornament"></div>
+
+          <div class="eyebrow">Psicologia para mulheres</div>
+
+          <h1>Denise Souza</h1>
+
+          <h2>Psicóloga · Atendimento psicológico on-line</h2>
+
+          <p>
+            Um espaço de escuta, acolhimento e construção de estratégias para mulheres adultas,
+            com base na Terapia Cognitivo-Comportamental.
+          </p>
+
+          <div class="hero-tags">
+            <span class="tag">Psicoterapia</span>
+            <span class="tag">One Session Therapy</span>
+            <span class="tag">Terapia Cognitivo-Comportamental</span>
+          </div>
+
+          <div class="buttons">
+            <a href="#contato" class="button">Entrar em contato</a>
+
+            <a href="#" class="button button-outline" target="_blank">
+              Agendar atendimento
+            </a>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -647,14 +687,28 @@
       <div class="contact-inner">
         <div class="section-title">
           <div class="small">Contato</div>
-          <h2>Links</h2>
+          <h2>Agendamento e links</h2>
           <p>
-            Para conhecer minha trajetória acadêmica ou entrar em contato.
+            Para agendar atendimento, conhecer minha trajetória acadêmica ou entrar em contato.
           </p>
         </div>
 
         <div class="contact-links">
+
           <div class="contact-card">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M7 2v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2H7Zm12 8H5V7h14v3Zm0 10H5v-8h14v8Z"/>
+            </svg>
+            <h3>Agendamento</h3>
+            <a href="#" target="_blank">
+              Link do Google Agenda
+            </a>
+          </div>
+
+          <div class="contact-card">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M12 2a10 10 0 0 0 0 20 10 10 0 0 0 0-20Zm0 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16Zm-1 4v5.2l4.4 2.6 1-1.7-3.4-2V8h-2Z"/>
+            </svg>
             <h3>CV Lattes</h3>
             <a href="http://lattes.cnpq.br/4859178862619817" target="_blank">
               Acessar currículo
@@ -662,11 +716,15 @@
           </div>
 
           <div class="contact-card">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 2-8 5.5L4 6h16ZM4 18V8.4l8 5.5 8-5.5V18H4Z"/>
+            </svg>
             <h3>E-mail</h3>
             <a href="mailto:souza.des@gmail.com">
               souza.des@gmail.com
             </a>
           </div>
+
         </div>
       </div>
     </section>
