@@ -62,7 +62,7 @@
 
     .logo {
       font-family: "Cormorant Infant", serif;
-      font-size: 1.9rem;
+      font-size: 1.7rem;
       color: var(--brown);
       text-decoration: none;
       font-weight: 600;
@@ -99,6 +99,7 @@
     }
 
     .hero-inner {
+      width: 100%;
       max-width: 1120px;
       margin: 0 auto;
       display: grid;
@@ -280,6 +281,7 @@
       max-width: 100%;
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
+      padding: 0;
     }
 
     .services-inner {
@@ -289,13 +291,13 @@
     }
 
     .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: stretch;
       gap: 1.5rem;
-    }
-
-    .cards.four {
-      grid-template-columns: repeat(4, 1fr);
+      width: 100%;
+      margin: 0 auto;
     }
 
     .card {
@@ -304,6 +306,10 @@
       border-radius: 26px;
       padding: 2rem;
       box-shadow: 0 10px 26px var(--shadow);
+      text-align: center;
+      flex: 1 1 280px;
+      max-width: 340px;
+      min-width: 260px;
     }
 
     .card-number {
@@ -317,7 +323,7 @@
       justify-content: center;
       font-family: "Cormorant Infant", serif;
       font-size: 1.3rem;
-      margin-bottom: 1.3rem;
+      margin: 0 auto 1.3rem;
     }
 
     .card h3 {
@@ -331,17 +337,6 @@
     .card p {
       color: var(--text-soft);
       font-size: 0.95rem;
-    }
-
-    .note {
-      margin-top: 2rem;
-      background: rgba(255, 255, 255, 0.5);
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 1.4rem 1.6rem;
-      color: var(--text-soft);
-      font-size: 0.94rem;
-      text-align: center;
     }
 
     .audience {
@@ -388,6 +383,7 @@
       max-width: 100%;
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
+      padding: 0;
     }
 
     .practice-inner {
@@ -403,6 +399,7 @@
       padding: 3rem;
       box-shadow: 0 12px 30px var(--shadow);
       position: relative;
+      text-align: center;
     }
 
     .practice-box::before {
@@ -412,7 +409,8 @@
       background: var(--gold);
       position: absolute;
       top: 0;
-      left: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
       border-radius: 999px;
     }
 
@@ -421,24 +419,26 @@
       margin-bottom: 1.1rem;
     }
 
-    .practice-box p:last-child {
-      margin-bottom: 0;
-    }
-
     .future-box {
-      margin-top: 2rem;
+      width: 100%;
+      max-width: 620px;
+      margin: 2rem auto 0;
       background: #FAF6F5;
       border: 1px solid var(--border);
       border-radius: 24px;
       padding: 1.8rem;
+      text-align: center;
+      overflow-wrap: break-word;
+      word-break: normal;
     }
 
     .future-box h3 {
       font-family: "Cormorant Infant", serif;
       color: var(--brown);
-      font-size: 1.7rem;
+      font-size: clamp(1.45rem, 3vw, 1.7rem);
       font-weight: 500;
       margin-bottom: 0.7rem;
+      line-height: 1.2;
     }
 
     .future-box p {
@@ -450,6 +450,7 @@
       background: linear-gradient(180deg, #F8EFED, #F3E5E3);
       max-width: 100%;
       border-top: 1px solid var(--border);
+      padding: 0;
     }
 
     .contact-inner {
@@ -460,8 +461,9 @@
     }
 
     .contact-links {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 1.2rem;
       margin-top: 2.5rem;
     }
@@ -473,6 +475,8 @@
       padding: 2rem;
       box-shadow: 0 10px 26px var(--shadow);
       text-align: center;
+      flex: 1 1 260px;
+      max-width: 360px;
     }
 
     .contact-card svg {
@@ -497,11 +501,6 @@
       font-size: 0.94rem;
     }
 
-    .contact-card a:hover {
-      color: var(--brown);
-      text-decoration: underline;
-    }
-
     .email-contact {
       margin-top: 3.5rem;
       text-align: center;
@@ -512,12 +511,6 @@
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      color: var(--rose-main);
-      transition: all 0.3s ease;
-    }
-
-    .email-link:hover {
-      color: var(--brown);
     }
 
     .email-icon {
@@ -540,22 +533,14 @@
       font-size: 0.85rem;
     }
 
-    @media (max-width: 1050px) {
-      .cards.four {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
     @media (max-width: 900px) {
       nav {
         display: none;
       }
 
-      .hero-inner,
-      .cards,
-      .cards.four,
-      .contact-links {
+      .hero-inner {
         grid-template-columns: 1fr;
+        text-align: center;
       }
 
       .hero-content {
@@ -579,6 +564,32 @@
       .about-box,
       .practice-box {
         padding: 2rem;
+      }
+
+      .card {
+        max-width: 420px;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 520px) {
+      section,
+      .services-inner,
+      .practice-inner,
+      .contact-inner {
+        padding: 4rem 1.2rem;
+      }
+
+      .navbar {
+        padding: 1rem 1.2rem;
+      }
+
+      .logo {
+        font-size: 1.35rem;
+      }
+
+      .future-box {
+        padding: 1.4rem;
       }
     }
   </style>
@@ -613,7 +624,7 @@
         <div class="hero-content">
           <div class="ornament"></div>
 
-          <div class="eyebrow">Psicoterapia e Mentoria de Carreira Acadêmica on-line para mulheres</div>
+          <div class="eyebrow">Psicoterapia e mentoria de carreira acadêmica on-line para mulheres</div>
 
           <h1>Denise Souza</h1>
 
@@ -688,7 +699,7 @@
           </p>
         </div>
 
-        <div class="cards four">
+        <div class="cards">
           <div class="card">
             <div class="card-number">01</div>
             <h3>Psicoterapia</h3>
@@ -699,21 +710,23 @@
             </p>
           </div>
 
-             <div class="card">
+          <div class="card">
             <div class="card-number">02</div>
             <h3>Terapia de Sessão Única</h3>
             <p>
-              Atendimento breve e focal para trabalhar uma demanda específica em uma única sessão, 
-              favorecendo clareza, organização emocional e definição de próximos passos possíveis.
+              Atendimento breve e focal para trabalhar uma demanda específica em uma
+              única sessão, favorecendo clareza, organização emocional e definição
+              de próximos passos possíveis.
             </p>
           </div>
+
           <div class="card">
             <div class="card-number">03</div>
             <h3>Avaliação Psicológica</h3>
             <p>
-              Processos avaliativos on-line realizados de forma ética, técnica e fundamentada,
-              conforme a demanda apresentada e as diretrizes da prática profissional, com objetivo 
-              de psicodiagnóstico ou avaliação de funções específicas.
+              Processos avaliativos on-line realizados de forma ética, técnica
+              e fundamentada, conforme a demanda apresentada e as diretrizes
+              da prática profissional.
             </p>
           </div>
 
@@ -727,7 +740,7 @@
           </div>
 
           <div class="card">
-            <div class="card-number">04</div>
+            <div class="card-number">05</div>
             <h3>Mentoria de Carreira Acadêmica</h3>
             <p>
               Orientação para estudantes, profissionais e pesquisadores que desejam
@@ -736,8 +749,9 @@
             </p>
           </div>
         </div>
+      </div>
+    </section>
 
-      
     <section id="mentoria">
       <div class="section-title">
         <div class="small">Pesquisa e carreira acadêmica</div>
@@ -812,7 +826,6 @@
         </div>
 
         <div class="practice-box">
-        
           <p>
             Cada processo terapêutico é conduzido de forma individualizada, considerando
             a história de vida, o contexto, os padrões emocionais, os comportamentos
@@ -827,15 +840,14 @@
 
           <p>
             Minha atuação é inspirada principalmente pelos modelos cognitivos
-            contemporâneos e conhecimentos das
-            neurociências aplicadas ao comportamento humano.
+            contemporâneos e conhecimentos das neurociências aplicadas ao comportamento humano.
           </p>
 
           <div class="future-box">
             <h3>Atendimento em português e em inglês</h3>
             <p>
-             Os atendimentos são destinados a brasileiras
-              residentes no Brasil e exterior.
+              Os atendimentos são destinados a brasileiras residentes no Brasil
+              e no exterior.
             </p>
           </div>
         </div>
@@ -880,13 +892,9 @@
 
         <div class="email-contact">
           <a href="mailto:souza.des@gmail.com" class="email-link" aria-label="Enviar e-mail para souza.des@gmail.com">
-
-            <svg xmlns="http://www.w3.org/2000/svg"
-                 viewBox="0 0 24 24"
-                 class="email-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="email-icon">
               <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 2-8 5.5L4 6h16ZM4 18V8.4l8 5.5 8-5.5V18H4Z"/>
             </svg>
-
           </a>
         </div>
 
