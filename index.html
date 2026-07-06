@@ -71,13 +71,15 @@
 
     nav {
       display: flex;
-      gap: 1.4rem;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     nav a {
       text-decoration: none;
       color: var(--text);
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 500;
     }
 
@@ -166,6 +168,12 @@
       margin-bottom: 1.4rem;
     }
 
+    .hero-text {
+      color: var(--text-soft);
+      max-width: 620px;
+      margin-bottom: 1.7rem;
+    }
+
     .hero-tags {
       display: flex;
       flex-wrap: wrap;
@@ -180,6 +188,12 @@
       padding: 0.55rem 1rem;
       border-radius: 999px;
       font-size: 0.85rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 0.9rem;
+      flex-wrap: wrap;
     }
 
     .button {
@@ -242,7 +256,7 @@
 
     .section-title p {
       color: var(--text-soft);
-      max-width: 640px;
+      max-width: 680px;
       margin: 0 auto;
     }
 
@@ -280,6 +294,10 @@
       gap: 1.5rem;
     }
 
+    .cards.four {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
     .card {
       background: #FCF8F7;
       border: 1px solid var(--border);
@@ -315,6 +333,17 @@
       font-size: 0.95rem;
     }
 
+    .note {
+      margin-top: 2rem;
+      background: rgba(255, 255, 255, 0.5);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 1.4rem 1.6rem;
+      color: var(--text-soft);
+      font-size: 0.94rem;
+      text-align: center;
+    }
+
     .audience {
       background: linear-gradient(135deg, #B98687, #A77473, #8F6464);
       border-radius: 34px;
@@ -342,7 +371,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 0.8rem;
-      max-width: 780px;
+      max-width: 820px;
       margin: 0 auto;
     }
 
@@ -393,6 +422,27 @@
     }
 
     .practice-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .future-box {
+      margin-top: 2rem;
+      background: #FAF6F5;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 1.8rem;
+    }
+
+    .future-box h3 {
+      font-family: "Cormorant Infant", serif;
+      color: var(--brown);
+      font-size: 1.7rem;
+      font-weight: 500;
+      margin-bottom: 0.7rem;
+    }
+
+    .future-box p {
+      color: var(--text-soft);
       margin-bottom: 0;
     }
 
@@ -490,6 +540,12 @@
       font-size: 0.85rem;
     }
 
+    @media (max-width: 1050px) {
+      .cards.four {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     @media (max-width: 900px) {
       nav {
         display: none;
@@ -497,6 +553,7 @@
 
       .hero-inner,
       .cards,
+      .cards.four,
       .contact-links {
         grid-template-columns: 1fr;
       }
@@ -510,7 +567,8 @@
         margin-right: auto;
       }
 
-      .hero-tags {
+      .hero-tags,
+      .hero-actions {
         justify-content: center;
       }
 
@@ -530,11 +588,12 @@
 
   <header>
     <div class="navbar">
-      <a href="#" class="logo">Denise Souza | Psicóloga</a>
+      <a href="#inicio" class="logo">Denise Souza | Psicóloga</a>
 
       <nav>
         <a href="#sobre">Sobre</a>
         <a href="#servicos">Serviços</a>
+        <a href="#mentoria">Mentoria</a>
         <a href="#como-trabalho">Como trabalho</a>
         <a href="#contato">Contato</a>
       </nav>
@@ -560,15 +619,27 @@
 
           <h2>Psicóloga 04/29438 | Doutora em Ciências</h2>
 
+          <p class="hero-text">
+            Atuação na interface entre psicologia clínica, ciência, formação profissional
+            e desenvolvimento acadêmico.
+          </p>
+
           <div class="hero-tags">
             <span class="tag">Psicoterapia</span>
-            <span class="tag">One Session Therapy</span>
-            <span class="tag">Supervisão</span>
+            <span class="tag">Avaliação Psicológica</span>
+            <span class="tag">Supervisão Clínica</span>
+            <span class="tag">Mentoria Acadêmica</span>
           </div>
 
-          <a href="#" class="button button-outline" target="_blank">
-            Agendar atendimento
-          </a>
+          <div class="hero-actions">
+            <a href="#" class="button button-outline" target="_blank">
+              Agendar atendimento
+            </a>
+
+            <a href="#servicos" class="button">
+              Conhecer serviços
+            </a>
+          </div>
         </div>
 
       </div>
@@ -577,28 +648,30 @@
     <section id="sobre">
       <div class="section-title">
         <div class="small">Quem sou</div>
+        <h2>Psicologia, ciência e formação</h2>
       </div>
 
       <div class="about-box">
         <p>
-          Psicóloga com 20 anos de formação. Doutora em Ciências pela Fiocruz.
-          Pesquisadora em saúde.
+          Psicóloga com 20 anos de formação. Doutora em Ciências pela Fiocruz
+          e pesquisadora na área da saúde.
         </p>
 
         <p>
-          Experiência de atuação clínica voltada ao atendimento de mulheres,
-          com foco na compreensão das dificuldades emocionais e no desenvolvimento
-          de estratégias para lidar com os desafios da vida cotidiana.
+          Minha trajetória integra experiência clínica, atuação no campo da saúde pública,
+          pesquisa científica, análise de dados e formação de profissionais.
         </p>
 
         <p>
-          Minha prática é orientada por evidências científicas e considera a relação
-          entre emoções, pensamentos, comportamentos, história de vida e contexto social.
+          Na clínica, meu trabalho é voltado ao cuidado psicológico de mulheres,
+          considerando emoções, pensamentos, comportamentos, história de vida
+          e contexto social.
         </p>
 
         <p>
-          Ofereço um espaço seguro, ético e acolhedor para refletir sobre a própria
-          história, fortalecer recursos pessoais e construir possibilidades de mudança.
+          Minha prática é orientada por evidências científicas e inspirada pelos
+          modelos cognitivos contemporâneos, pela Terapia do Esquema e pelos
+          conhecimentos das neurociências aplicadas ao comportamento humano.
         </p>
       </div>
     </section>
@@ -607,36 +680,96 @@
       <div class="services-inner">
         <div class="section-title">
           <div class="small">Serviços</div>
-          <h2>Modalidades de atendimento</h2>
+          <h2>Modalidades de atuação</h2>
+          <p>
+            Um conjunto de serviços construído a partir da integração entre cuidado,
+            ciência e formação profissional.
+          </p>
         </div>
 
-        <div class="cards">
+        <div class="cards four">
           <div class="card">
             <div class="card-number">01</div>
             <h3>Psicoterapia</h3>
             <p>
-              Processo terapêutico para compreender dificuldades emocionais,
-              desenvolver habilidades de enfrentamento e promover mudanças consistentes.
+              Atendimento psicológico on-line para mulheres, com foco na compreensão
+              das dificuldades emocionais, no fortalecimento de recursos pessoais
+              e na construção de mudanças possíveis.
             </p>
           </div>
 
           <div class="card">
             <div class="card-number">02</div>
-            <h3>One Session Therapy</h3>
+            <h3>Avaliação Psicológica</h3>
             <p>
-              Atendimento focado em uma demanda específica, com o objetivo de produzir
-              clareza, organização e estratégias possíveis em uma única sessão.
+              Processos avaliativos realizados de forma ética, técnica e fundamentada,
+              conforme a demanda apresentada e as diretrizes da prática profissional.
             </p>
           </div>
 
           <div class="card">
             <div class="card-number">03</div>
-            <h3>Supervisão</h3>
+            <h3>Supervisão Clínica</h3>
             <p>
-              Espaço destinado a profissionais que desejam aprofundar a compreensão
-              de casos, fortalecer o raciocínio clínico e qualificar sua prática.
+              Espaço destinado a psicólogas e psicólogos que desejam aprofundar
+              o raciocínio clínico, discutir casos e qualificar sua prática profissional.
             </p>
           </div>
+
+          <div class="card">
+            <div class="card-number">04</div>
+            <h3>Mentoria Acadêmica</h3>
+            <p>
+              Orientação para estudantes, profissionais e pesquisadores que desejam
+              desenvolver projetos, organizar produção científica ou planejar sua
+              trajetória acadêmica.
+            </p>
+          </div>
+        </div>
+
+        <div class="note">
+          A avaliação psicológica on-line será organizada conforme a natureza da demanda,
+          os instrumentos indicados e as normas éticas e técnicas da Psicologia.
+        </div>
+      </div>
+    </section>
+
+    <section id="mentoria">
+      <div class="section-title">
+        <div class="small">Pesquisa e carreira acadêmica</div>
+        <h2>Mentoria acadêmica e científica</h2>
+        <p>
+          Um serviço voltado a quem deseja construir ou fortalecer sua trajetória
+          na pesquisa, na pós-graduação e na produção científica.
+        </p>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="card-number">01</div>
+          <h3>Projetos de pesquisa</h3>
+          <p>
+            Apoio na organização da pergunta de pesquisa, objetivos, método,
+            justificativa, desenho do estudo e estruturação do projeto.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-number">02</div>
+          <h3>Produção científica</h3>
+          <p>
+            Orientação para resumos, artigos, trabalhos de congresso, interpretação
+            de resultados e organização da escrita acadêmica.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-number">03</div>
+          <h3>Carreira acadêmica</h3>
+          <p>
+            Planejamento de trajetória científica, preparação para mestrado ou doutorado,
+            organização de currículo e construção de uma linha de desenvolvimento.
+          </p>
         </div>
       </div>
     </section>
@@ -656,7 +789,8 @@
           <span>Depressão</span>
           <span>Sobrecarga emocional</span>
           <span>Mudanças de vida</span>
-          <span>Experiência de traumas</span>
+          <span>Experiências de trauma</span>
+          <span>Autoconhecimento</span>
           <span>Desenvolvimento pessoal</span>
         </div>
       </div>
@@ -669,8 +803,7 @@
           <div class="small">Como trabalho</div>
           <h2>Um cuidado fundamentado na ciência</h2>
           <p>
-            Uma prática clínica ética, acolhedora e orientada pelas melhores
-            evidências disponíveis.
+            Uma prática ética, acolhedora e orientada pelas melhores evidências disponíveis.
           </p>
         </div>
 
@@ -694,9 +827,20 @@
 
           <p>
             Minha atuação é inspirada principalmente pelos modelos cognitivos
-            contemporâneos e pelos conhecimentos das neurociências aplicadas
-            ao comportamento humano.
+            contemporâneos, pela Terapia do Esquema e pelos conhecimentos das
+            neurociências aplicadas ao comportamento humano.
           </p>
+
+          <div class="future-box">
+            <h3>Atendimento em português e, futuramente, em inglês</h3>
+            <p>
+              Atualmente, os atendimentos são realizados em português. A oferta de
+              atendimento em inglês faz parte do meu plano de desenvolvimento
+              profissional futuro, especialmente para ampliar o cuidado a brasileiras
+              residentes no exterior e pessoas que buscam atendimento psicológico
+              em língua inglesa.
+            </p>
+          </div>
         </div>
 
       </div>
@@ -706,6 +850,7 @@
       <div class="contact-inner">
         <div class="section-title">
           <div class="small">Contato</div>
+          <h2>Agendamento e informações</h2>
           <p>
             Para agendar atendimento, conhecer minha trajetória acadêmica
             ou entrar em contato.
@@ -755,10 +900,6 @@
 
   <footer>
     © 2026 Denise Souza. Todos os direitos reservados.
-  </footer>
-
-</body>
-</html>
   </footer>
 
 </body>
