@@ -166,13 +166,6 @@
       margin-bottom: 1.4rem;
     }
 
-    .hero p {
-      max-width: 650px;
-      color: var(--text-soft);
-      font-size: 1rem;
-      margin-bottom: 2rem;
-    }
-
     .hero-tags {
       display: flex;
       flex-wrap: wrap;
@@ -187,12 +180,6 @@
       padding: 0.55rem 1rem;
       border-radius: 999px;
       font-size: 0.85rem;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 0.9rem;
-      flex-wrap: wrap;
     }
 
     .button {
@@ -367,64 +354,46 @@
       font-size: 0.9rem;
     }
 
-    .approaches {
+    .practice {
       background: linear-gradient(180deg, #FCF8F7, #F6ECEB);
       max-width: 100%;
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
 
-    .approaches-inner {
-      max-width: 1120px;
+    .practice-inner {
+      max-width: 900px;
       margin: 0 auto;
       padding: 5rem 2rem;
     }
 
-    .approach-intro {
-      max-width: 850px;
-      margin: 0 auto 3rem;
-      text-align: center;
-      color: var(--text-soft);
-    }
-
-    .approach-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-
-    .approach-card {
+    .practice-box {
       background: #FCF8F7;
       border: 1px solid var(--border);
-      border-radius: 26px;
-      padding: 2rem;
-      box-shadow: 0 10px 26px var(--shadow);
+      border-radius: 30px;
+      padding: 3rem;
+      box-shadow: 0 12px 30px var(--shadow);
       position: relative;
-      overflow: hidden;
     }
 
-    .approach-card::before {
+    .practice-box::before {
       content: "";
-      width: 70px;
+      width: 90px;
       height: 3px;
       background: var(--gold);
       position: absolute;
       top: 0;
-      left: 2rem;
+      left: 3rem;
       border-radius: 999px;
     }
 
-    .approach-card h3 {
-      font-family: "Cormorant Infant", serif;
-      color: var(--brown);
-      font-size: 1.65rem;
-      font-weight: 500;
-      margin-bottom: 0.8rem;
+    .practice-box p {
+      color: var(--text-soft);
+      margin-bottom: 1.1rem;
     }
 
-    .approach-card p {
-      color: var(--text-soft);
-      font-size: 0.95rem;
+    .practice-box p:last-child {
+      margin-bottom: 0;
     }
 
     .contact {
@@ -492,11 +461,8 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
       text-decoration: none;
       color: var(--rose-main);
-      font-weight: 500;
-      font-size: 1rem;
       transition: all 0.3s ease;
     }
 
@@ -531,7 +497,6 @@
 
       .hero-inner,
       .cards,
-      .approach-cards,
       .contact-links {
         grid-template-columns: 1fr;
       }
@@ -545,8 +510,7 @@
         margin-right: auto;
       }
 
-      .hero-tags,
-      .buttons {
+      .hero-tags {
         justify-content: center;
       }
 
@@ -554,7 +518,8 @@
         max-width: 300px;
       }
 
-      .about-box {
+      .about-box,
+      .practice-box {
         padding: 2rem;
       }
     }
@@ -570,7 +535,7 @@
       <nav>
         <a href="#sobre">Sobre</a>
         <a href="#servicos">Serviços</a>
-        <a href="#abordagens">Abordagens</a>
+        <a href="#como-trabalho">Como trabalho</a>
         <a href="#contato">Contato</a>
       </nav>
     </div>
@@ -595,18 +560,15 @@
 
           <h2>Psicóloga 04/29438 | Doutora em Ciências</h2>
 
-         
-
           <div class="hero-tags">
             <span class="tag">Psicoterapia</span>
             <span class="tag">One Session Therapy</span>
             <span class="tag">Supervisão</span>
           </div>
 
-           <a href="#" class="button button-outline" target="_blank">
-              Agendar atendimento
-            </a>
-          </div>
+          <a href="#" class="button button-outline" target="_blank">
+            Agendar atendimento
+          </a>
         </div>
 
       </div>
@@ -615,29 +577,28 @@
     <section id="sobre">
       <div class="section-title">
         <div class="small">Quem sou</div>
-              
       </div>
 
       <div class="about-box">
         <p>
-          Psicóloga com 20 anos de formação. Doutora em Ciências pela Fiocruz. Pesquisadora em saúde.
-        </p>
-        
-        <p>
-          Experiência de atuação clínica voltada ao atendimento de mulheres, com foco na compreensão
-          das dificuldades emocionais e no desenvolvimento de estratégias para lidar
-          com os desafios da vida cotidiana.
+          Psicóloga com 20 anos de formação. Doutora em Ciências pela Fiocruz.
+          Pesquisadora em saúde.
         </p>
 
         <p>
-          Abordagem a partir de referenciais baseados em evidências científicas,
-          buscando compreender a relação entre emoções, pensamentos, comportamentos,
-          história de vida e contexto social.
+          Experiência de atuação clínica voltada ao atendimento de mulheres,
+          com foco na compreensão das dificuldades emocionais e no desenvolvimento
+          de estratégias para lidar com os desafios da vida cotidiana.
         </p>
 
         <p>
-          Espaço seguro, ético e acolhedor para refletir sobre a própria história,
-          fortalecer recursos pessoais e construir possibilidades de mudança.
+          Minha prática é orientada por evidências científicas e considera a relação
+          entre emoções, pensamentos, comportamentos, história de vida e contexto social.
+        </p>
+
+        <p>
+          Ofereço um espaço seguro, ético e acolhedor para refletir sobre a própria
+          história, fortalecer recursos pessoais e construir possibilidades de mudança.
         </p>
       </div>
     </section>
@@ -647,7 +608,6 @@
         <div class="section-title">
           <div class="small">Serviços</div>
           <h2>Modalidades de atendimento</h2>
-        
         </div>
 
         <div class="cards">
@@ -673,8 +633,8 @@
             <div class="card-number">03</div>
             <h3>Supervisão</h3>
             <p>
-              Espaço destinado a profissionais que desejam aprofundar a compreensão de casos,
-              fortalecer o raciocínio clínico e qualificar sua prática.
+              Espaço destinado a profissionais que desejam aprofundar a compreensão
+              de casos, fortalecer o raciocínio clínico e qualificar sua prática.
             </p>
           </div>
         </div>
@@ -684,10 +644,11 @@
     <section>
       <div class="audience">
         <h2>Quando buscar atendimento</h2>
+
         <p>
-          O cuidado psicológico pode auxiliar a mulher em diferentes momentos da vida,
-          especialmente quando há sofrimento emocional, sobrecarga, insegurança ou
-          necessidade de reorganização pessoal.
+          O cuidado psicológico pode auxiliar em diferentes momentos da vida,
+          especialmente quando há sofrimento emocional, sobrecarga, insegurança
+          ou necessidade de reorganização pessoal.
         </p>
 
         <div class="list">
@@ -701,51 +662,43 @@
       </div>
     </section>
 
-    <section class="approaches" id="abordagens">
-      <div class="approaches-inner">
+    <section class="practice" id="como-trabalho">
+      <div class="practice-inner">
+
         <div class="section-title">
-          <div class="small">Abordagens</div>
-          <h2>Prática clínica</h2>
+          <div class="small">Como trabalho</div>
+          <h2>Um cuidado fundamentado na ciência</h2>
           <p>
-            Cuidado psicológico baseado em evidências, com atenção à história,
-            ao contexto e às necessidades de cada pessoa.
+            Uma prática clínica ética, acolhedora e orientada pelas melhores
+            evidências disponíveis.
           </p>
         </div>
 
-        <p class="approach-intro">
-          Atuação integra referenciais científicos para compreender a complexidade
-          da experiência humana e construir intervenções individualizadas,
-          respeitando os objetivos, o ritmo e o momento de vida de cada paciente.
-        </p>
+        <div class="practice-box">
+          <p>
+            Minha prática clínica é fundamentada em evidências científicas e construída
+            a partir da integração de diferentes referenciais da psicologia contemporânea.
+          </p>
 
-        <div class="approach-cards">
-          <div class="approach-card">
-            <h3>Terapia Cognitivo-Comportamental</h3>
-            <p>
-              Abordagem baseada em evidências que auxilia na compreensão da relação
-              entre pensamentos, emoções e comportamentos, favorecendo o desenvolvimento
-              de habilidades para enfrentar dificuldades emocionais.
-            </p>
-          </div>
+          <p>
+            Cada processo terapêutico é conduzido de forma individualizada, considerando
+            a história de vida, o contexto, os padrões emocionais, os comportamentos
+            e os objetivos de cada pessoa.
+          </p>
 
-          <div class="approach-card">
-            <h3>Terapia do Esquema</h3>
-            <p>
-              Modelo integrativo que amplia a compreensão de padrões emocionais e
-              comportamentais construídos ao longo da vida, especialmente aqueles que se
-              repetem nos relacionamentos e na autoestima.
-            </p>
-          </div>
+          <p>
+            Mais do que aplicar técnicas, o trabalho terapêutico busca construir
+            compreensão, fortalecer recursos pessoais e favorecer mudanças consistentes
+            e sustentáveis.
+          </p>
 
-          <div class="approach-card">
-            <h3>Neurociência e Comportamento</h3>
-            <p>
-              Conhecimentos das neurociências contribuem para compreender como processos
-              cerebrais, aprendizagem, regulação emocional e comportamento se relacionam
-              na construção do sofrimento e da mudança.
-            </p>
-          </div>
+          <p>
+            Minha atuação é inspirada principalmente pelos modelos cognitivos
+            contemporâneos e pelos conhecimentos das neurociências aplicadas
+            ao comportamento humano.
+          </p>
         </div>
+
       </div>
     </section>
 
@@ -753,9 +706,9 @@
       <div class="contact-inner">
         <div class="section-title">
           <div class="small">Contato</div>
-         
           <p>
-            Para agendar atendimento, conhecer minha trajetória acadêmica ou entrar em contato.
+            Para agendar atendimento, conhecer minha trajetória acadêmica
+            ou entrar em contato.
           </p>
         </div>
 
@@ -792,7 +745,6 @@
               <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 2-8 5.5L4 6h16ZM4 18V8.4l8 5.5 8-5.5V18H4Z"/>
             </svg>
 
-
           </a>
         </div>
 
@@ -803,6 +755,10 @@
 
   <footer>
     © 2026 Denise Souza. Todos os direitos reservados.
+  </footer>
+
+</body>
+</html>
   </footer>
 
 </body>
